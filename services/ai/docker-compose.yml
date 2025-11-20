@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  hiva-llm-engine:
+    build: .
+    network_mode: "host"
+    environment:
+      - LLM_API_URL=http://localhost:11434
