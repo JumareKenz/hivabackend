@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-12-15T16:31:06.637051",
+  "overall_status": "failed",
+  "summary": {
+    "total_errors": 1,
+    "total_warnings": 0,
+    "validation_results": {
+      "schema": {
+        "table_count": 81,
+        "claims_columns": 29,
+        "users_columns": 46,
+        "providers_columns": 6,
+        "states_columns": 5,
+        "status": "passed"
+      },
+      "data": {
+        "claims_row_count": 80175,
+        "users_row_count": 1264388,
+        "providers_row_count": 4278,
+        "status": "passed"
+      },
+      "functional": {
+        "status": "failed",
+        "passed": 2,
+        "failed": 1,
+        "total": 3
+      },
+      "performance": {
+        "status": "passed",
+        "sql_generation_time": 4.5299530029296875e-06,
+        "query_execution_time": 0.027164936065673828,
+        "total_time": 0.027169466018676758
+      },
+      "semantic": {
+        "status": "passed",
+        "passed": 4,
+        "failed": 0
+      }
+    }
+  },
+  "errors": [
+    "Query 'Top 10 providers by claim volume' generation failed: Failed to generate SQL: Error generating text: RunPod API error 404: "
+  ],
+  "warnings": [],
+  "recommendations": [
+    "\u274c 1 errors found. Review and fix before proceeding with migration."
+  ]
+}

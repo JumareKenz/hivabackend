@@ -1,0 +1,64 @@
+===========================================
+MySQL Database Setup Instructions
+===========================================
+
+Database Host: claimify-api.hayokmedicare.ng
+Port: 3306
+Type: MySQL
+Adminer URL: https://claimify-api.hayokmedicare.ng/adminer
+
+===========================================
+STEP 1: Get Database Credentials
+===========================================
+
+1. Go to: https://claimify-api.hayokmedicare.ng/adminer
+2. Login with your database credentials
+3. Note down:
+   - Database Name
+   - Username
+   - Password
+
+===========================================
+STEP 2: Add to .env File
+===========================================
+
+Edit: /root/hiva/services/ai/.env
+
+Add these lines:
+
+ANALYTICS_DB_TYPE=mysql
+ANALYTICS_DB_HOST=claimify-api.hayokmedicare.ng
+ANALYTICS_DB_PORT=3306
+ANALYTICS_DB_NAME=YOUR_DATABASE_NAME
+ANALYTICS_DB_USER=YOUR_USERNAME
+ANALYTICS_DB_PASSWORD=YOUR_PASSWORD
+
+===========================================
+STEP 3: Test Connection
+===========================================
+
+cd /root/hiva/services/ai/admin_chat
+python3 -c "
+import asyncio
+from app.services.database_service import database_service
+
+async def test():
+    await database_service.initialize()
+    if database_service.pool:
+        print('✅ Connection successful!')
+        schema = await database_service.get_schema_info()
+        print(f'Found {len(schema.get(\"tables\", []))} tables')
+    else:
+        print('❌ Connection failed - check credentials')
+
+asyncio.run(test())
+"
+
+===========================================
+STEP 4: Start Admin Chat Service
+===========================================
+
+cd /root/hiva/services/ai/admin_chat
+uvicorn app.main:app --host 0.0.0.0 --port 8001
+
+===========================================

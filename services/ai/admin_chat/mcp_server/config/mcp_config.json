@@ -1,0 +1,78 @@
+{
+  "server": {
+    "name": "admin-chat-mcp",
+    "version": "1.0.0",
+    "description": "MCP Server for Admin Chat Service - Natural language to SQL analytics"
+  },
+  "resources": {
+    "schema": {
+      "base_uri": "schema://database",
+      "cache_ttl": 3600,
+      "supported_tables": ["claims", "users", "providers", "states", "health_records", "appointments"]
+    },
+    "data": {
+      "base_uri": "data://database",
+      "default_limit": 100,
+      "max_limit": 1000
+    },
+    "context": {
+      "base_uri": "context://session",
+      "ttl_hours": 24
+    },
+    "results": {
+      "base_uri": "results://query",
+      "cache_ttl": 3600
+    }
+  },
+  "tools": {
+    "generate_sql": {
+      "enabled": true,
+      "max_retries": 2,
+      "timeout_seconds": 30
+    },
+    "execute_query": {
+      "enabled": true,
+      "read_only": true,
+      "max_rows": 10000,
+      "timeout_seconds": 60
+    },
+    "get_schema": {
+      "enabled": true,
+      "cache_ttl": 3600
+    },
+    "create_visualization": {
+      "enabled": true,
+      "supported_types": ["bar", "line", "pie", "table", "auto"]
+    },
+    "manage_conversation": {
+      "enabled": true,
+      "max_history": 10
+    }
+  },
+  "prompts": {
+    "sql_generation": {
+      "template_path": "prompts/sql_generation.json",
+      "variables": ["query", "schema", "history"]
+    },
+    "data_summary": {
+      "template_path": "prompts/data_summary.json",
+      "variables": ["data", "query"]
+    }
+  },
+  "performance": {
+    "sql_generation_timeout": 30,
+    "query_execution_timeout": 60,
+    "max_concurrent_queries": 10,
+    "cache_enabled": true
+  },
+  "security": {
+    "read_only_queries": true,
+    "allowed_sql_keywords": ["SELECT"],
+    "forbidden_sql_keywords": [
+      "INSERT", "UPDATE", "DELETE", "DROP", "CREATE", "ALTER",
+      "TRUNCATE", "GRANT", "REVOKE", "EXEC", "EXECUTE"
+    ]
+  }
+}
+
+

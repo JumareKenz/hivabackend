@@ -46,15 +46,22 @@ async def ask(payload: dict):
         # Get Ollama client
         ollama_client = await get_ollama_client()
         
-        # Retrieve context asynchronously
-        rag_context = await rag_service.retrieve_async(
-            query=user_query,
-            k=5,
-            branch_id=branch_id,
-            use_cache=True
-        )
+        # Check if it's a simple greeting (skip RAG for these)
+        simple_greetings = {"hello", "hi", "hey", "good morning", "good afternoon", "good evening", "greetings"}
+        is_simple_greeting = user_query.lower().strip() in simple_greetings or len(user_query.strip()) < 10
         
-        if not rag_context:
+        # Retrieve context asynchronously (skip for simple greetings)
+        rag_context = None
+        if not is_simple_greeting:
+            rag_context = await rag_service.retrieve_async(
+                query=user_query,
+                k=5,
+                branch_id=branch_id,
+                use_cache=True
+            )
+        
+        # For simple greetings or queries without RAG context, allow helpful responses
+        if not rag_context and not is_simple_greeting:
             return {
                 "answer": "I couldn't find specific information about this in our knowledge base. Please contact us at +2349012345678 for more information.",
                 "session_id": session_id

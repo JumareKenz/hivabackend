@@ -1,13 +1,10 @@
 """
 Conversation history and context management
 """
-from typing import List, Dict, Optional, Any
+from typing import List, Dict, Optional
 from datetime import datetime, timedelta
 import json
 from collections import defaultdict
-import logging
-
-logger = logging.getLogger(__name__)
 
 
 class ConversationManager:
@@ -56,59 +53,6 @@ class ConversationManager:
             recent = self._conversations[session_id][-self.max_history:]
             self._conversations[session_id] = recent
     
-    def get_last_query_results(
-        self,
-        session_id: str
-    ) -> Optional[Dict[str, Any]]:
-        """
-        Get the last query's SQL and results from conversation history.
-        Used for narrative analysis of follow-up questions.
-        
-        Returns:
-            Dict with:
-                - sql: str
-                - results: List[Dict]
-                - query: str (original user query)
-                - analytical_summary: str
-                - row_count: int
-            or None if no previous query found
-        """
-        if session_id not in self._conversations:
-            logger.debug(f"No conversation history for session: {session_id}")
-            return None
-        
-        # Find last assistant message with query results
-        # Look through messages in reverse order
-        for msg in reversed(self._conversations[session_id]):
-            if msg.get("role") == "assistant":
-                metadata = msg.get("metadata", {})
-                
-                # Check if this message has SQL and results
-                sql = metadata.get("sql")
-                results = metadata.get("results")
-                
-                # Also check if results might be in data field (backward compatibility)
-                if not results and metadata.get("data"):
-                    results = metadata.get("data")
-                
-                if sql and results:
-                    query = metadata.get("query", "")
-                    analytical_summary = metadata.get("analytical_summary", "")
-                    row_count = metadata.get("row_count", len(results) if isinstance(results, list) else 0)
-                    
-                    logger.debug(f"Found previous query results for session {session_id}: {len(results) if isinstance(results, list) else 0} rows")
-                    
-                    return {
-                        "sql": sql,
-                        "results": results if isinstance(results, list) else [],
-                        "query": query,
-                        "analytical_summary": analytical_summary,
-                        "row_count": row_count
-                    }
-        
-        logger.debug(f"No previous query results found for session: {session_id}")
-        return None
-    
     def get_messages(
         self,
         session_id: str,
@@ -125,17 +69,13 @@ class ConversationManager:
         if max_messages:
             messages = messages[-max_messages:]
         
-        # Format for LLM - include metadata for follow-up handling
+        # Format for LLM
         formatted = []
         for msg in messages:
-            formatted_msg = {
+            formatted.append({
                 "role": msg["role"],
                 "content": msg["content"]
-            }
-            # Include metadata if available (for follow-up queries)
-            if msg.get("metadata"):
-                formatted_msg["metadata"] = msg["metadata"]
-            formatted.append(formatted_msg)
+            })
         
         return formatted
     
