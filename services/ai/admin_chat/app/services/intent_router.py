@@ -102,7 +102,9 @@ Be friendly, professional, and helpful."""
                         "chart", "graph", "visualization", "top", "bottom",
                         "how many", "what is the", "breakdown", "volume",
                         "who are", "what are", "transaction", "amount", "per",
-                        "give me", "tell me"]
+                        "give me", "tell me", "which", "highest", "lowest",
+                        "most", "least", "disease", "diagnosis", "patient",
+                        "state", "kogi", "zamfara", "kano", "lagos", "kaduna"]
         
         # Check for data keywords - if found, likely DATA intent
         if any(keyword in query_lower for keyword in data_keywords):

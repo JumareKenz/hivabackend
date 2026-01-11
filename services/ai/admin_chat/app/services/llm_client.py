@@ -1,28 +1,161 @@
 """
-LLM Client Service - Interface to Groq API for SQL generation
-(Previously used RunPod GPU LLM - now using Groq API like users/providers)
+LLM Client Service - Interface to RunPod GPU LLM for SQL generation
+(Primary: RunPod proxy endpoint, Fallback: Groq API)
 """
 import aiohttp
 import json
 import asyncio
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, Tuple
 from app.core.config import settings
 
 
 class LLMClient:
-    """Client for interacting with Groq API (OpenAI-compatible endpoint)"""
+    """Client for interacting with RunPod GPU LLM (OpenAI-compatible endpoint)
+    
+    Features:
+    - Primary: RunPod GPU LLM
+    - Fallback: Groq API (if RunPod returns 404 or is unavailable)
+    - Automatic provider switching on failure
+    """
+    
+    # Groq models to try in order of preference (verified available Jan 2026)
+    GROQ_MODELS = [
+        "meta-llama/llama-4-scout-17b-16e-instruct",    # Llama 4 - new, reliable
+        "meta-llama/llama-4-maverick-17b-128e-instruct", # Llama 4 variant
+        "moonshotai/kimi-k2-instruct",                   # Kimi K2
+        "groq/compound-mini",                            # Groq native
+        "qwen/qwen3-32b",                                # Qwen 3
+        "llama-3.3-70b-versatile",                       # May need activation
+        "llama-3.1-8b-instant",                          # May need activation
+        "openai/gpt-oss-20b",                            # Smaller, higher limits
+        "openai/gpt-oss-120b",                           # Very low TPM (8000)
+    ]
     
     def __init__(self):
-        # Groq API configuration
-        self.api_key = settings.GROQ_API_KEY
-        self.base_url = settings.GROQ_BASE_URL
-        self.timeout = settings.LLM_TIMEOUT
-        self.model = settings.LLM_MODEL
+        # Store both configurations for fallback
+        self.runpod_api_key = settings.RUNPOD_API_KEY
+        self.runpod_base_url = settings.RUNPOD_BASE_URL
+        self.runpod_model = settings.LLM_MODEL
         
-        # RunPod GPU configuration (COMMENTED OUT - Using Groq API instead)
-        # self.api_key = settings.RUNPOD_API_KEY
-        # self.endpoint_id = settings.RUNPOD_ENDPOINT_ID
-        # self.base_url = settings.RUNPOD_BASE_URL
+        self.groq_api_key = settings.GROQ_API_KEY
+        self.groq_base_url = settings.GROQ_BASE_URL
+        
+        # Start with RunPod if configured
+        if self.runpod_base_url and self.runpod_api_key:
+            self.api_key = self.runpod_api_key
+            self.base_url = self.runpod_base_url
+            self.provider = "runpod"
+            self.model = self.runpod_model
+        else:
+            # Fallback to Groq API if RunPod not configured
+            self.api_key = self.groq_api_key
+            self.base_url = self.groq_base_url
+            self.provider = "groq"
+            self.model = self.GROQ_MODELS[0]  # Use first Groq model
+        
+        self.timeout = settings.LLM_TIMEOUT
+    
+    def _switch_to_groq(self):
+        """Switch to Groq API as fallback"""
+        if self.groq_api_key and self.groq_base_url:
+            self.api_key = self.groq_api_key
+            self.base_url = self.groq_base_url
+            self.provider = "groq"
+            self.model = self.GROQ_MODELS[0]
+            return True
+        return False
+    
+    async def _try_groq_models(self, api_url: str, payload: dict, headers: dict) -> str:
+        """Try multiple Groq models in sequence until one works"""
+        groq_errors = []
+        last_error = None
+        
+        for groq_model in self.GROQ_MODELS:
+            payload["model"] = groq_model
+            self.model = groq_model
+            print(f"🔄 Trying Groq model: {groq_model}")
+            
+            response_text, error = await self._make_request(api_url, payload, headers)
+            
+            if response_text is not None:
+                print(f"✅ Groq model {groq_model} succeeded")
+                return response_text
+            
+            # Record error and continue to next model
+            if error:
+                error_lower = error.lower()
+                groq_errors.append(f"{groq_model}: {error[:80]}")
+                
+                if "blocked" in error_lower or "permission" in error_lower:
+                    print(f"⚠️ {groq_model}: blocked, trying next...")
+                elif "rate limit" in error_lower or "429" in error:
+                    print(f"⚠️ {groq_model}: rate limited, trying next...")
+                elif "not_found" in error_lower or "does not exist" in error_lower or "invalid" in error_lower:
+                    print(f"⚠️ {groq_model}: not found, trying next...")
+                else:
+                    print(f"⚠️ {groq_model}: {error[:60]}, trying next...")
+                
+                last_error = error
+        
+        # All Groq models failed
+        raise RuntimeError(
+            f"All Groq models failed ({len(groq_errors)} tried). Last error: {last_error}"
+        )
+    
+    async def _make_request(
+        self,
+        api_url: str,
+        payload: Dict[str, Any],
+        headers: Dict[str, str]
+    ) -> Tuple[Optional[str], Optional[str]]:
+        """Make a single request to the API
+        
+        Returns:
+            Tuple of (response_text, error_message)
+        """
+        try:
+            async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=self.timeout)) as session:
+                async with session.post(api_url, json=payload, headers=headers) as response:
+                    if response.status == 404:
+                        return None, f"API returned 404 - endpoint not found or model not available"
+                    
+                    if response.status in [502, 503, 504]:
+                        return None, f"API returned {response.status} - service unavailable"
+                    
+                    if response.status != 200:
+                        error_text = await response.text()
+                        return None, f"API error {response.status}: {error_text[:500]}"
+                    
+                    result = await response.json()
+                    
+                    # Extract generated text from OpenAI-compatible response format
+                    if isinstance(result, dict):
+                        if "choices" in result and len(result["choices"]) > 0:
+                            choice = result["choices"][0]
+                            if "message" in choice:
+                                message = choice["message"]
+                                if isinstance(message, dict) and "content" in message:
+                                    return message["content"], None
+                                elif isinstance(message, str):
+                                    return message, None
+                            elif "text" in choice:
+                                return choice["text"], None
+                        elif "text" in result:
+                            return result["text"], None
+                        elif "error" in result:
+                            error_msg = result["error"]
+                            if isinstance(error_msg, dict):
+                                error_msg = error_msg.get("message", str(error_msg))
+                            return None, f"API error: {error_msg}"
+                    
+                    return str(result), None
+                    
+        except asyncio.TimeoutError:
+            return None, f"Request timed out after {self.timeout}s"
+        except aiohttp.ClientError as e:
+            return None, f"Network error: {str(e)}"
+        except Exception as e:
+            return None, f"Unexpected error: {str(e)}"
     
     async def generate(
         self,
@@ -32,7 +165,7 @@ class LLMClient:
         stop: Optional[list] = None
     ) -> str:
         """
-        Generate text using Groq API
+        Generate text using RunPod or Groq API with automatic fallback
         
         Args:
             prompt: Input prompt
@@ -44,10 +177,14 @@ class LLMClient:
             Generated text
         """
         if not self.api_key:
-            raise ValueError("GROQ_API_KEY is not set")
+            provider_name = "RunPod" if self.provider == "runpod" else "Groq"
+            raise ValueError(f"{provider_name}_API_KEY is not set")
         
-        # Groq API uses OpenAI-compatible chat completions endpoint
-        api_url = f"{self.base_url.rstrip('/')}/chat/completions"
+        # Build API URL
+        if "/chat/completions" in self.base_url:
+            api_url = self.base_url
+        else:
+            api_url = f"{self.base_url.rstrip('/')}/chat/completions"
         
         payload = {
             "model": self.model,
@@ -68,76 +205,46 @@ class LLMClient:
         # Retry logic for transient errors (502, 503, 504, timeout)
         max_retries = 3
         retry_delay = 2  # Start with 2 seconds
+        last_error = None
         
+        # If already using Groq, go straight to multi-model fallback
+        if self.provider == "groq":
+            return await self._try_groq_models(api_url, payload, headers)
+        
+        # Try with RunPod first
         for attempt in range(max_retries):
-            try:
-                async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=self.timeout)) as session:
-                    async with session.post(api_url, json=payload, headers=headers) as response:
-                        # Handle 502/503/504 errors (bad gateway, service unavailable, gateway timeout)
-                        if response.status in [502, 503, 504]:
-                            error_text = await response.text()
-                            if attempt < max_retries - 1:
-                                wait_time = retry_delay * (2 ** attempt)  # Exponential backoff
-                                print(f"⚠️ Groq API returned {response.status} (attempt {attempt + 1}/{max_retries}). Retrying in {wait_time}s...")
-                                await asyncio.sleep(wait_time)
-                                continue
-                            else:
-                                raise RuntimeError(
-                                    f"Groq API endpoint is unavailable (502 Bad Gateway). "
-                                    f"Please try again later."
-                                )
-                        
-                        if response.status != 200:
-                            error_text = await response.text()
-                            raise RuntimeError(f"Groq API error {response.status}: {error_text[:500]}")
-                        
-                        result = await response.json()
+            response_text, error = await self._make_request(api_url, payload, headers)
+            
+            if response_text is not None:
+                return response_text
+            
+            last_error = error
+            
+            # On 404 from RunPod, switch to Groq immediately
+            if error and "404" in error:
+                print(f"⚠️ RunPod endpoint not available (404). Switching to Groq fallback...")
+                if self._switch_to_groq():
+                    # Update API URL and payload for Groq
+                    api_url = f"{self.base_url.rstrip('/')}/chat/completions"
+                    payload["model"] = self.model
+                    headers["Authorization"] = f"Bearer {self.api_key}"
                     
-                    # Extract generated text from OpenAI-compatible response format
-                    if isinstance(result, dict):
-                        if "choices" in result and len(result["choices"]) > 0:
-                            choice = result["choices"][0]
-                            # Chat completions format
-                            if "message" in choice:
-                                message = choice["message"]
-                                if isinstance(message, dict) and "content" in message:
-                                    return message["content"]
-                                elif isinstance(message, str):
-                                    return message
-                            # Completions format (fallback)
-                            elif "text" in choice:
-                                return choice["text"]
-                        elif "text" in result:
-                            return result["text"]
-                    
-                    # Fallback: return string representation
-                    return str(result)
-                    
-            except asyncio.TimeoutError:
-                if attempt < max_retries - 1:
-                    wait_time = retry_delay * (2 ** attempt)
-                    print(f"⚠️ Groq API timeout (attempt {attempt + 1}/{max_retries}). Retrying in {wait_time}s...")
-                    await asyncio.sleep(wait_time)
-                    continue
+                    # Try all Groq models
+                    return await self._try_groq_models(api_url, payload, headers)
                 else:
-                    raise RuntimeError(
-                        f"Groq API request timed out after {self.timeout}s. "
-                        f"Please try again later."
-                    )
-            except aiohttp.ClientError as e:
-                if attempt < max_retries - 1:
-                    wait_time = retry_delay * (2 ** attempt)
-                    print(f"⚠️ Network error (attempt {attempt + 1}/{max_retries}): {str(e)[:100]}. Retrying in {wait_time}s...")
-                    await asyncio.sleep(wait_time)
-                    continue
-                else:
-                    raise RuntimeError(f"Network error calling Groq API after {max_retries} attempts: {str(e)}")
-            except Exception as e:
-                # Don't retry on non-transient errors
-                raise RuntimeError(f"Error generating text: {str(e)}")
+                    raise RuntimeError(f"RunPod API returned 404 and Groq fallback is not configured")
+            
+            # For other errors, retry with exponential backoff
+            if attempt < max_retries - 1:
+                wait_time = retry_delay * (2 ** attempt)
+                provider_name = "RunPod" if self.provider == "runpod" else "Groq"
+                print(f"⚠️ {provider_name} API error (attempt {attempt + 1}/{max_retries}): {last_error}. Retrying in {wait_time}s...")
+                await asyncio.sleep(wait_time)
+                continue
         
-        # Should not reach here, but just in case
-        raise RuntimeError("Failed to generate text after all retry attempts")
+        # All retries exhausted
+        provider_name = "RunPod" if self.provider == "runpod" else "Groq"
+        raise RuntimeError(f"Error generating text: {provider_name} API failed after {max_retries} attempts. Last error: {last_error}")
 
 
 # ============================================================================

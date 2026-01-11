@@ -54,7 +54,16 @@ class VisualizationService:
             return {
                 "type": "empty",
                 "message": "No data returned from query",
-                "data": []
+                "data": [],
+                "row_count": 0,
+                "columns": [],
+                "numeric_columns": [],
+                "categorical_columns": [],
+                # Provide empty chart placeholders so callers don't KeyError
+                "suggestions": [],
+                "chart_config": {"plotly": None, "chartjs": None},
+                "chart_image": {},
+                "metadata": {}
             }
         
         # Get column names

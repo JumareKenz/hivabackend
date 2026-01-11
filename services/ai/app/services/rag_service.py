@@ -1,79 +1,111 @@
 """
-Optimized RAG service with caching and async operations
+RAG service for branch FAQs.
+
+Provides async wrapper around the branch FAQ retriever.
 """
+
+from __future__ import annotations
+
 import asyncio
-from typing import List, Optional
-from functools import lru_cache
 import hashlib
+from typing import Optional
+
 from app.rag.retriever import retrieve
-from app.core.config import settings
 
 
 class RAGService:
-    """High-performance RAG service with caching"""
+    """
+    Async RAG service with caching for branch FAQs.
+    """
     
-    def __init__(self, cache_size: int = 128):
-        self.cache_size = cache_size
-        self._cache: dict = {}
-    
-    def _get_cache_key(self, query: str, k: int, branch_id: Optional[str] = None) -> str:
-        """Generate cache key for query"""
-        key_str = f"{query}:{k}:{branch_id or ''}"
-        return hashlib.md5(key_str.encode()).hexdigest()
-    
-    async def retrieve_async(
-        self,
-        query: str,
-        k: int = 5,
-        branch_id: Optional[str] = None,
-        use_cache: bool = True,
-        fast_mode: bool = True  # Reduce k for faster retrieval
-    ) -> str:
+    def __init__(self, cache_size: int = 256):
         """
-        Async retrieval with caching
+        Initialize the service.
         
         Args:
-            query: User query
-            k: Number of documents to retrieve
-            branch_id: Optional branch ID for branch-specific retrieval
-            use_cache: Whether to use cache
+            cache_size: Maximum number of cached query results (default: 256)
         """
+        self.cache_size = cache_size
+        self._cache: dict[str, str] = {}
+        self._cache_access_order: list[str] = []
+
+    def _cache_key(self, query: str, k: int, branch_id: Optional[str]) -> str:
+        """Generate a cache key for a query."""
+        key_str = f"{query}:{k}:{branch_id or 'none'}"
+        return hashlib.md5(key_str.encode("utf-8")).hexdigest()
+
+    async def retrieve_async(
+        self, 
+        query: str, 
+        k: int = 5, 
+        branch_id: Optional[str] = None,
+        use_cache: bool = True
+    ) -> str:
+        """
+        Retrieve documents asynchronously with caching.
+        
+        Args:
+            query: User query string
+            k: Number of documents to retrieve
+            branch_id: Optional branch identifier for branch-specific retrieval
+            use_cache: Whether to use cache (default: True)
+            
+        Returns:
+            Formatted context string with retrieved documents
+        """
+        if not query or not query.strip():
+            return ""
+
         # Check cache
         if use_cache:
-            cache_key = self._get_cache_key(query, k, branch_id)
-            if cache_key in self._cache:
-                return self._cache[cache_key]
-        
-        # Optimize k for speed if fast_mode
-        effective_k = min(k, 3) if fast_mode else k
-        
-        # Run retrieval in executor to avoid blocking
-        # Use None to get the default ThreadPoolExecutor (Python 3.12 compatible)
-        # Pass branch_id to retrieve function for filtering
-        context = await asyncio.get_event_loop().run_in_executor(
-            None,  # None uses default ThreadPoolExecutor
-            retrieve,
-            query,
-            effective_k,
-            branch_id  # Pass branch_id for branch-specific retrieval
-        )
-        
-        # Cache result
-        if use_cache and context:
-            cache_key = self._get_cache_key(query, k, branch_id)
+            key = self._cache_key(query, k, branch_id)
+            if key in self._cache:
+                # Move to end (most recently used)
+                if key in self._cache_access_order:
+                    self._cache_access_order.remove(key)
+                self._cache_access_order.append(key)
+                return self._cache[key]
+
+        # Retrieve from vector store (run in executor to avoid blocking)
+        try:
+            ctx = await asyncio.get_event_loop().run_in_executor(
+                None, 
+                lambda: retrieve(query, k, branch_id)
+            )
+        except Exception as e:
+            import logging
+            logging.error(f"Error in retrieve_async: {e}")
+            return ""
+
+        # Update cache
+        if use_cache and ctx:
+            key = self._cache_key(query, k, branch_id)
+            
+            # LRU eviction: remove oldest if cache is full
             if len(self._cache) >= self.cache_size:
-                # Remove oldest entry (simple FIFO)
-                oldest_key = next(iter(self._cache))
-                del self._cache[oldest_key]
-            self._cache[cache_key] = context
-        
-        return context
-    
+                if self._cache_access_order:
+                    oldest_key = self._cache_access_order.pop(0)
+                    del self._cache[oldest_key]
+            
+            # Add new entry
+            self._cache[key] = ctx
+            self._cache_access_order.append(key)
+
+        return ctx
+
     def clear_cache(self):
-        """Clear the retrieval cache"""
+        """Clear the query cache."""
         self._cache.clear()
+        self._cache_access_order.clear()
+
+    def get_cache_stats(self) -> dict:
+        """Get cache statistics."""
+        return {
+            "cache_size": len(self._cache),
+            "max_cache_size": self.cache_size,
+            "cache_utilization": len(self._cache) / self.cache_size if self.cache_size > 0 else 0
+        }
 
 
-# Global RAG service instance
 rag_service = RAGService()
 

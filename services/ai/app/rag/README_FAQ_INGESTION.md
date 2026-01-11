@@ -56,6 +56,11 @@ python -m app.rag.ingest abuja
 python -m app.rag.ingest --clear
 ```
 
+## ✅ Implementation Note (this repo)
+
+`python -m app.rag.ingest` is implemented in `app/rag/ingest.py` and writes a **persistent**
+ChromaDB store under `app/rag/db/` with collection name **`faq_collection`**.
+
 ## 📝 Supported File Formats
 
 - **PDF** (`.pdf`) - Automatically extracted

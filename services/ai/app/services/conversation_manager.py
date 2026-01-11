@@ -24,6 +24,7 @@ class ConversationManager:
         self._conversations: Dict[str, List[Dict]] = defaultdict(list)
         self._timestamps: Dict[str, datetime] = {}
         self._branch_context: Dict[str, Dict] = {}  # branch_id -> context info
+        self._kb_context: Dict[str, Dict] = {}  # kb_id -> context info (states/providers KBs)
     
     def add_message(
         self,
@@ -31,6 +32,7 @@ class ConversationManager:
         role: str,
         content: str,
         branch_id: Optional[str] = None,
+        kb_id: Optional[str] = None,
         metadata: Optional[Dict] = None
     ):
         """Add a message to conversation history"""
@@ -46,6 +48,8 @@ class ConversationManager:
         
         if branch_id:
             message["metadata"]["branch_id"] = branch_id
+        if kb_id:
+            message["metadata"]["kb_id"] = kb_id
         
         self._conversations[session_id].append(message)
         self._timestamps[session_id] = datetime.now()
@@ -146,6 +150,14 @@ class ConversationManager:
     def set_branch_context(self, branch_id: str, context: Dict):
         """Set branch-specific context (modes of operation, policies, etc.)"""
         self._branch_context[branch_id] = context
+
+    def get_kb_context(self, kb_id: str) -> Dict:
+        """Get KB-specific context (states/providers RAG)."""
+        return self._kb_context.get(kb_id, {})
+
+    def set_kb_context(self, kb_id: str, context: Dict):
+        """Set KB-specific context (states/providers KB metadata, policies, etc.)."""
+        self._kb_context[kb_id] = context
     
     def get_conversation_summary(self, session_id: str) -> str:
         """Generate a comprehensive summary of the conversation for context awareness"""
@@ -165,10 +177,15 @@ class ConversationManager:
         
         # Detect branch from conversation history
         branch_mentioned = None
+        kb_mentioned = None
         for msg in recent_messages:
             branch = msg.get("metadata", {}).get("branch_id")
             if branch:
                 branch_mentioned = branch
+                break
+            kb = msg.get("metadata", {}).get("kb_id")
+            if kb:
+                kb_mentioned = kb
                 break
         
         # Build comprehensive summary
@@ -176,6 +193,8 @@ class ConversationManager:
         
         if branch_mentioned:
             summary_parts.append(f"Current conversation is about the {branch_mentioned.upper()} branch.")
+        if kb_mentioned:
+            summary_parts.append(f"Current conversation is using the {kb_mentioned.upper()} knowledge base.")
         
         if len(user_queries) > 1:
             summary_parts.append(f"Previous questions: {'; '.join(user_queries[:-1][-2:])}")
@@ -209,14 +228,85 @@ class ConversationManager:
         for session_id in expired:
             self.clear_conversation(session_id)
     
+    def reformulate_query(self, session_id: str, current_query: str) -> str:
+        """
+        Reformulate a query using conversation context for better retrieval.
+        
+        This is particularly useful for follow-up questions that reference
+        previous conversation (e.g., "What about that?", "Tell me more").
+        
+        Args:
+            session_id: Session identifier
+            current_query: Current user query
+            
+        Returns:
+            Reformulated query with context, or original query if no context
+        """
+        if session_id not in self._conversations or len(self._conversations[session_id]) < 2:
+            return current_query
+        
+        # Check if this looks like a follow-up question
+        follow_up_indicators = [
+            "what about", "how about", "tell me more", "what else",
+            "also", "and", "continue", "more", "that", "this", "it"
+        ]
+        
+        query_lower = current_query.lower()
+        is_follow_up = any(indicator in query_lower for indicator in follow_up_indicators) or len(current_query.split()) < 5
+        
+        if not is_follow_up:
+            return current_query
+        
+        # Get recent conversation to add context
+        recent_messages = self._conversations[session_id][-4:]
+        context_parts = []
+        
+        for msg in recent_messages:
+            if msg.get("role") == "user":
+                prev_query = msg.get("content", "")
+                if prev_query and prev_query != current_query:
+                    context_parts.append(f"Previous question: {prev_query}")
+            elif msg.get("role") == "assistant":
+                prev_answer = msg.get("content", "")[:150]  # Truncate
+                if prev_answer:
+                    context_parts.append(f"Previous answer context: {prev_answer}...")
+        
+        if context_parts:
+            # Reformulate query with context
+            context_str = " | ".join(context_parts)
+            reformulated = f"{current_query} (Context: {context_str})"
+            logger.debug(f"Query reformulated: '{current_query}' -> '{reformulated[:100]}...'")
+            return reformulated
+        
+        return current_query
+
     def get_context_for_llm(
         self,
         session_id: str,
         branch_id: Optional[str] = None,
         rag_context: Optional[str] = None,
+        kb_id: Optional[str] = None,
         current_query: Optional[str] = None
     ) -> str:
-        """Build comprehensive context string for LLM with strict branch filtering and conversation awareness"""
+        """
+        Build comprehensive context string for LLM with strict filtering and conversation awareness.
+        
+        This method intelligently combines:
+        - KB/Branch-specific context
+        - Retrieved RAG context
+        - Conversation history
+        - Conversation summary
+        
+        Args:
+            session_id: Session identifier
+            branch_id: Optional branch identifier
+            rag_context: Retrieved context from vector store
+            kb_id: Optional knowledge base identifier
+            current_query: Current user query (for context-aware formatting)
+            
+        Returns:
+            Formatted context string for LLM, or None if no context
+        """
         context_parts = []
         
         # Add branch-specific context FIRST and prominently
@@ -224,13 +314,63 @@ class ConversationManager:
             branch_ctx = self.get_branch_context(branch_id)
             if branch_ctx:
                 context_parts.append(f"=== BRANCH: {branch_id.upper()} ===\nBranch Information: {json.dumps(branch_ctx, indent=2)}\n")
+
+        # Add KB-specific context (states/providers)
+        if kb_id:
+            kb_ctx = self.get_kb_context(kb_id)
+            if kb_ctx:
+                context_parts.append(f"=== KNOWLEDGE BASE: {kb_id.upper()} ===\nKB Information: {json.dumps(kb_ctx, indent=2)}\n")
         
-        # Add RAG context with branch label
+        # Add RAG context with branch label and STRICT instructions
         if rag_context:
-            if branch_id:
-                context_parts.append(f"=== KNOWLEDGE BASE FOR {branch_id.upper()} BRANCH ===\n{rag_context}\n=== END OF {branch_id.upper()} KNOWLEDGE BASE ===")
+            anti_hallucination_instruction = """
+CRITICAL RESPONSE GUIDELINES:
+
+1. BE POLITE, FRIENDLY, AND CONVERSATIONAL:
+   - Use warm, welcoming language
+   - Be helpful and empathetic
+   - Use phrases like "I'd be happy to help", "Let me assist you with that", "I'm here to help"
+   - Maintain a professional yet friendly tone throughout
+
+2. ANSWER CONFIDENTLY when information is in the knowledge base below. Use the information directly and naturally.
+
+3. DO NOT include in your response:
+   - Source citations, references, or attributions (e.g., "According to...", "The document states...", "As mentioned in...")
+   - File names, document titles, or page numbers
+   - Technical metadata or markers
+   - Phrases like "based on the knowledge base" or "according to the documents"
+   - Brackets, parentheses, or special formatting indicating sources
+   - Lists of references or citations
+
+4. WRITE NATURALLY as if you are a knowledgeable, friendly assistant providing information directly.
+
+5. ONLY say "I don't have that information" if the knowledge base truly does not contain relevant information about the question. When you don't have information, politely suggest contacting the Agency directly.
+
+6. For questions, provide clear, direct answers using the information from the knowledge base. Be confident and helpful.
+
+7. DO NOT make up information, but DO use the information that IS available confidently.
+
+8. HANDLE SPECIAL QUERIES:
+   - Greetings (hi, hello, hey, yo): Respond warmly and explain what information you can help with
+   - Thank you: Acknowledge graciously and offer further assistance
+   - Please/Help: Be extra helpful and supportive
+   - Satisfaction check: If user says "no" or "not satisfied", ask how you can help better
+
+YOUR RESPONSE STYLE:
+- Polite, friendly, and conversational
+- Warm and welcoming
+- Direct, confident, and helpful
+- Natural conversational tone
+- No citations or references
+- Focus on answering the user's question clearly
+"""
+            
+            if kb_id:
+                context_parts.append(f"{anti_hallucination_instruction}\n=== KNOWLEDGE BASE FOR {kb_id.upper()} ===\n{rag_context}\n=== END OF {kb_id.upper()} KNOWLEDGE BASE ===")
+            elif branch_id:
+                context_parts.append(f"{anti_hallucination_instruction}\n=== KNOWLEDGE BASE FOR {branch_id.upper()} BRANCH ===\n{rag_context}\n=== END OF {branch_id.upper()} KNOWLEDGE BASE ===")
             else:
-                context_parts.append(f"=== KNOWLEDGE BASE ===\n{rag_context}\n=== END OF KNOWLEDGE BASE ===")
+                context_parts.append(f"{anti_hallucination_instruction}\n=== KNOWLEDGE BASE ===\n{rag_context}\n=== END OF KNOWLEDGE BASE ===")
         
         # Add enhanced conversation summary for context awareness
         summary = self.get_conversation_summary(session_id)
@@ -238,18 +378,38 @@ class ConversationManager:
             context_parts.append(f"=== CONVERSATION CONTEXT ===\n{summary}\n=== END OF CONVERSATION CONTEXT ===")
         
         # Add recent conversation history for better context understanding (last 2 exchanges)
+        # Intelligently truncate to avoid token limits
         if session_id in self._conversations and len(self._conversations[session_id]) > 2:
             recent = self._conversations[session_id][-4:]  # Last 2 user-assistant exchanges
             if recent:
                 context_parts.append("=== RECENT CONVERSATION HISTORY ===\n")
                 for msg in recent:
                     role = msg.get("role", "unknown")
-                    content = msg.get("content", "")[:200]  # Limit length
+                    content = msg.get("content", "")
+                    
+                    # Smart truncation: preserve important parts
+                    if len(content) > 300:
+                        # Try to keep the beginning and end
+                        truncated = content[:200] + "... [truncated] ..." + content[-50:]
+                    else:
+                        truncated = content
+                    
                     if role == "user":
-                        context_parts.append(f"User: {content}")
+                        context_parts.append(f"User: {truncated}")
                     elif role == "assistant":
-                        context_parts.append(f"Assistant: {content}")
+                        context_parts.append(f"Assistant: {truncated}")
                 context_parts.append("=== END OF CONVERSATION HISTORY ===\n")
+        
+        # Add instruction for handling follow-ups
+        if current_query and session_id in self._conversations:
+            if len(self._conversations[session_id]) > 2:
+                context_parts.append(
+                    "=== INSTRUCTIONS ===\n"
+                    "This is part of an ongoing conversation. Use the conversation history "
+                    "to provide context-aware responses. If the user's question is a follow-up, "
+                    "reference the previous conversation naturally.\n"
+                    "=== END OF INSTRUCTIONS ===\n"
+                )
         
         return "\n\n".join(context_parts) if context_parts else None
 

@@ -1,0 +1,6073 @@
+{
+  "extracted_at": "2026-01-06T12:29:50.273379",
+  "tables": {
+    "claims": {
+      "name": "claims",
+      "domain": "clinical",
+      "description": "Healthcare claims submitted by patients",
+      "row_count": 83854,
+      "importance_score": 100,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "client_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claim_unique_id",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "seen_date",
+          "data_type": "date",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "diagnosis",
+          "data_type": "text",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "treatment",
+          "data_type": "text",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claim_level",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "client_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "authorization_code",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "total_cost",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "prepared_by_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "checked_by_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "verified_by_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "approved_by_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "prepared_by_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "checked_by_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "verified_by_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "approved_by_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_signed",
+          "data_type": "tinyint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "org_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dependent_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_out_of_station",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "users": {
+      "name": "users",
+      "domain": "users",
+      "description": "System users (patients, providers, admins)",
+      "row_count": 1308535,
+      "importance_score": 95,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "role_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": true,
+          "references_table": "roles",
+          "references_column": "id"
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "picture",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "firstname",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lastname",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "tribe",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phone_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_image",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_image_updated_at",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email_verified_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "password",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "localgovt",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "address1",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "ward",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "institutional_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "job_title",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "means_of_id",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state_of_origin",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lga_of_origin",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "recipient_code",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dob",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "gender",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "date_id_card_issued",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "education",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "blood",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "genotype",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "remember_token",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "settings",
+          "data_type": "json",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_role",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "id_card_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "previous_user_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "virtual_account",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "point_of_care",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "sector",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "salary_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "religion",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "place_of_work",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "nimc_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "middlename",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "grade_level",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "date_of_entry",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "marital_status",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_of_vulnerable_group",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "community",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "alternate_provider_id",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "signature",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "facility_code",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "enrolled_by",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "org_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lga",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "occupation",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phc_sector",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phc_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phc_general",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "sectorType",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "special_need",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "expiry_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "blocked_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "enabled_user",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "plan_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "role_id",
+          "references_table": "roles",
+          "references_column": "id",
+          "constraint": "users_role_id_foreign"
+        }
+      ]
+    },
+    "service_summaries": {
+      "name": "service_summaries",
+      "domain": "clinical",
+      "description": "Service summary records linking claims to diagnoses",
+      "row_count": 298436,
+      "importance_score": 95,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "client_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "diagnosis",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "encounter_outcome",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "authorization_code",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "treatment_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "date_of_admission",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "date_of_discharge",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "health_record_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claim_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dependent_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "secondary_diagnosis",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_confirmed",
+          "data_type": "tinyint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_underlying",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "diagnoses": {
+      "name": "diagnoses",
+      "domain": "clinical",
+      "description": "Medical diagnosis codes and names",
+      "row_count": 34830,
+      "importance_score": 90,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "symptoms",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "transmission",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "diagnosis",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "treatment",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "prevention",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "diagnosis_code",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_primary",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "providers": {
+      "name": "providers",
+      "domain": "providers",
+      "description": "Healthcare providers (hospitals, clinics)",
+      "row_count": 4281,
+      "importance_score": 90,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "claims_services": {
+      "name": "claims_services",
+      "domain": "clinical",
+      "description": "Junction table linking claims to services",
+      "row_count": 363315,
+      "importance_score": 85,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claims_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "services_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "drugs_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "cost",
+          "data_type": "double",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "remark_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dose",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "frequency",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "days",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "vetted_price",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "verified_price",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "vetted_dose",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "vetted_frequency",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "vetted_days",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "verified_dose",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "verified_frequency",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "verified_days",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "services": {
+      "name": "services",
+      "domain": "clinical",
+      "description": "Medical services catalog",
+      "row_count": 3578,
+      "importance_score": 85,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_category_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "kgshia_code",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "price",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "description",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "states": {
+      "name": "states",
+      "domain": "users",
+      "description": "Nigerian states for geographic filtering",
+      "row_count": 718,
+      "importance_score": 85,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "country_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "dependants": {
+      "name": "dependants",
+      "domain": "users",
+      "description": "Patient dependents",
+      "row_count": 348451,
+      "importance_score": 80,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "enrolle_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "firstname",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lastname",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phone_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "relationShipType",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dob",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "gender",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "image",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lga",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "middle_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "institution_attending",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "enrolled_by",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "id_card_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "expiry_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "enabled_user",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_civil_servant",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "nimc_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "blood",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "health_records": {
+      "name": "health_records",
+      "domain": "clinical",
+      "description": "Patient health records",
+      "row_count": 300801,
+      "importance_score": 80,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "professional_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "appointment_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "patient_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "reasonVisit",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "testResult",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "drVisited",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "medications",
+          "data_type": "text",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "documents",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "notes",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "date_of_visit",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "encounter_id",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dependent_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "facility_accreditations": {
+      "name": "facility_accreditations",
+      "domain": "providers",
+      "description": "Provider accreditation status",
+      "row_count": 6034,
+      "importance_score": 75,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name_of_facility",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "address",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "ward",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "localgovt",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phone_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "facility_type",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "transactions": {
+      "name": "transactions",
+      "domain": "financial",
+      "description": "Financial transactions",
+      "row_count": 2348,
+      "importance_score": 75,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "description",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "amount",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "transaction_ref",
+          "data_type": "mediumtext",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "batch_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "authorization_codes": {
+      "name": "authorization_codes",
+      "domain": "financial",
+      "description": "Pre-authorization codes for claims",
+      "row_count": 103955,
+      "importance_score": 70,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "requested_by",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_by",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "principal_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dependent_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "code_created",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "date_requested",
+          "data_type": "date",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "expiry_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_code_used",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "org_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_summary_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "referred_to_facility",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_corridor",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "secondary_agency_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "quality_assurances": {
+      "name": "quality_assurances",
+      "domain": "providers",
+      "description": "Quality assurance records",
+      "row_count": 6008,
+      "importance_score": 70,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "facility_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "form_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "accreditation_category",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name_of_contact_person",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "signature_of_contact_person",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "team_leader",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "signature_of_monitoring_team_leader",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "further_comments",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "drugs": {
+      "name": "drugs",
+      "domain": "clinical",
+      "description": "Pharmaceutical drug catalog",
+      "row_count": 3948,
+      "importance_score": 70,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "drug_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dosage",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "strengths",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "presentation",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "price",
+          "data_type": "double",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "sub_category_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "unit",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "primary_price",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "secondary_price",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "tertiary_price",
+          "data_type": "double",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "activity_log": {
+      "name": "activity_log",
+      "domain": "general",
+      "description": "",
+      "row_count": 1906581,
+      "importance_score": 60,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "log_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "description",
+          "data_type": "text",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "subject_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "subject_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "causer_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "causer_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "properties",
+          "data_type": "json",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "services_renderreds": {
+      "name": "services_renderreds",
+      "domain": "general",
+      "description": "",
+      "row_count": 411346,
+      "importance_score": 60,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_summary_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "drug_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dose",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "frequency",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "days",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "total_cost",
+          "data_type": "double",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "accreditation_responses": {
+      "name": "accreditation_responses",
+      "domain": "general",
+      "description": "",
+      "row_count": 187113,
+      "importance_score": 60,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_item_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "response",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "score",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "comments": {
+      "name": "comments",
+      "domain": "admin",
+      "description": "Comments on claims/records",
+      "row_count": 11341,
+      "importance_score": 50,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claim_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "body",
+          "data_type": "mediumtext",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_summary_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "complaint_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "authorization_code_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claim_service_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "transaction_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "documents": {
+      "name": "documents",
+      "domain": "admin",
+      "description": "Uploaded documents",
+      "row_count": 85544,
+      "importance_score": 45,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "document",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "previous_user_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "deleted_at",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "user_dumps": {
+      "name": "user_dumps",
+      "domain": "general",
+      "description": "",
+      "row_count": 29416,
+      "importance_score": 40,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "picture",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "firstname",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lastname",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phone_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_image",
+          "data_type": "longtext",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "nimc_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email_verified_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "password",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "localgovt",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "address1",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "ward",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "institutional_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "job_title",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agencyAddress",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agencyWebsite",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agencyDescription",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agencyActive",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dob",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "middlename",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "marital_status",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_of_vulnerable_group",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "enrolled_by",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "org_id",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lga",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "gender",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "height",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "weight",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "blood",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "genotype",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "id_card_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_role",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "point_of_care",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "sector",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "salary_number",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "fingerprint",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "place_of_work",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "change_providers": {
+      "name": "change_providers",
+      "domain": "general",
+      "description": "",
+      "row_count": 8641,
+      "importance_score": 20,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "client_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "previous_health_facility",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "new_health_facility",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "reason_for_change",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "rm_date",
+          "data_type": "date",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "prepared_by",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "quality_assurances_accreditation_services": {
+      "name": "quality_assurances_accreditation_services",
+      "domain": "general",
+      "description": "",
+      "row_count": 6054,
+      "importance_score": 20,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "accreditation_service_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "service_drug_sectors": {
+      "name": "service_drug_sectors",
+      "domain": "general",
+      "description": "",
+      "row_count": 2874,
+      "importance_score": 20,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "drug_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "price",
+          "data_type": "double",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "wards": {
+      "name": "wards",
+      "domain": "general",
+      "description": "",
+      "row_count": 2088,
+      "importance_score": 20,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "lg_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "ward_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "ward_short_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "ministry_models": {
+      "name": "ministry_models",
+      "domain": "general",
+      "description": "",
+      "row_count": 1408,
+      "importance_score": 20,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "previous_ministry_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "hmo_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "options": {
+      "name": "options",
+      "domain": "general",
+      "description": "",
+      "row_count": 1128,
+      "importance_score": 20,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_item_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "option_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "score_value",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "quality_assurance_items": {
+      "name": "quality_assurance_items",
+      "domain": "general",
+      "description": "",
+      "row_count": 915,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "form_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "item_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "response_info",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "scores",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "remarks",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_items_categories_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "quality_assurance_items_sub_categories_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_scoring",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "item_order",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "local_governments": {
+      "name": "local_governments",
+      "domain": "general",
+      "description": "",
+      "row_count": 775,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "state_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "local_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "abr",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "claims_paymentorders": {
+      "name": "claims_paymentorders",
+      "domain": "general",
+      "description": "",
+      "row_count": 506,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "claims_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "paymentorder_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "data_rows": {
+      "name": "data_rows",
+      "domain": "general",
+      "description": "",
+      "row_count": 454,
+      "importance_score": 15,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "data_type_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": true,
+          "references_table": "data_types",
+          "references_column": "id"
+        },
+        {
+          "name": "field",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "display_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "required",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "browse",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "read",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "edit",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "add",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "delete",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "details",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "order",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "data_type_id",
+          "references_table": "data_types",
+          "references_column": "id",
+          "constraint": "data_rows_data_type_id_foreign"
+        }
+      ]
+    },
+    "drugs_sub_categories": {
+      "name": "drugs_sub_categories",
+      "domain": "general",
+      "description": "",
+      "row_count": 201,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "sub_category_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "permissions": {
+      "name": "permissions",
+      "domain": "general",
+      "description": "",
+      "row_count": 196,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "key",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "table_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "enrollment_users": {
+      "name": "enrollment_users",
+      "domain": "general",
+      "description": "",
+      "row_count": 156,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "orgenrol_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "migrations": {
+      "name": "migrations",
+      "domain": "general",
+      "description": "",
+      "row_count": 186,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "migration",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "batch",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "permission_role": {
+      "name": "permission_role",
+      "domain": "general",
+      "description": "",
+      "row_count": 196,
+      "importance_score": 20,
+      "primary_key": "permission_id",
+      "columns": [
+        {
+          "name": "permission_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": true,
+          "references_table": "permissions",
+          "references_column": "id"
+        },
+        {
+          "name": "role_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": true,
+          "references_table": "roles",
+          "references_column": "id"
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "permission_id",
+          "references_table": "permissions",
+          "references_column": "id",
+          "constraint": "permission_role_permission_id_foreign"
+        },
+        {
+          "column": "role_id",
+          "references_table": "roles",
+          "references_column": "id",
+          "constraint": "permission_role_role_id_foreign"
+        }
+      ]
+    },
+    "ratings": {
+      "name": "ratings",
+      "domain": "general",
+      "description": "",
+      "row_count": 93,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_summary_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "score",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "quality_assurance_items_categories": {
+      "name": "quality_assurance_items_categories",
+      "domain": "general",
+      "description": "",
+      "row_count": 88,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "accreditation_services_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_belongs_to",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_personnel",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "form_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "paymentorders": {
+      "name": "paymentorders",
+      "domain": "general",
+      "description": "",
+      "row_count": 98,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "payment_number",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "provider_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "letter_of_address",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "type",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "status",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "payment_method",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "drug_categories": {
+      "name": "drug_categories",
+      "domain": "general",
+      "description": "",
+      "row_count": 64,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "org_enrolls": {
+      "name": "org_enrolls",
+      "domain": "general",
+      "description": "",
+      "row_count": 58,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "organization_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "phone_number",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "email",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "tpa_id",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "org_status",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "previous_hmo_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "data_types": {
+      "name": "data_types",
+      "domain": "general",
+      "description": "",
+      "row_count": 37,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "slug",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "display_name_singular",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "display_name_plural",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "icon",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "model_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "policy_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "controller",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "description",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "generate_permissions",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "server_side",
+          "data_type": "tinyint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "details",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "menu_items": {
+      "name": "menu_items",
+      "domain": "general",
+      "description": "",
+      "row_count": 45,
+      "importance_score": 15,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "menu_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": true,
+          "references_table": "menus",
+          "references_column": "id"
+        },
+        {
+          "name": "title",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "url",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "target",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "icon_class",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "color",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "parent_id",
+          "data_type": "int",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "order",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "route",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "parameters",
+          "data_type": "text",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "menu_id",
+          "references_table": "menus",
+          "references_column": "id",
+          "constraint": "menu_items_menu_id_foreign"
+        }
+      ]
+    },
+    "authorizationcode_services": {
+      "name": "authorizationcode_services",
+      "domain": "general",
+      "description": "",
+      "row_count": 22,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "authorizationcode_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "drug_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_id",
+          "data_type": "bigint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "dose",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "frequency",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "days",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "service_categories": {
+      "name": "service_categories",
+      "domain": "general",
+      "description": "",
+      "row_count": 19,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "category_name",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "is_laboratory_test",
+          "data_type": "tinyint",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "remarks": {
+      "name": "remarks",
+      "domain": "general",
+      "description": "",
+      "row_count": 25,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "remark_code",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "forms": {
+      "name": "forms",
+      "domain": "general",
+      "description": "",
+      "row_count": 18,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "description",
+          "data_type": "mediumtext",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "fingerprints": {
+      "name": "fingerprints",
+      "domain": "general",
+      "description": "",
+      "row_count": 24,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "user_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "leftfour",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "rightfour",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "thumbs",
+          "data_type": "varchar",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "service_summary_diagnosis": {
+      "name": "service_summary_diagnosis",
+      "domain": "general",
+      "description": "",
+      "row_count": 20,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_summary_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "diagnosis_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    },
+    "accreditation_services": {
+      "name": "accreditation_services",
+      "domain": "general",
+      "description": "",
+      "row_count": 15,
+      "importance_score": 10,
+      "primary_key": "id",
+      "columns": [
+        {
+          "name": "id",
+          "data_type": "bigint",
+          "is_nullable": false,
+          "is_primary_key": true,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "agency_id",
+          "data_type": "int",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_code",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "service_name",
+          "data_type": "varchar",
+          "is_nullable": false,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "created_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        },
+        {
+          "name": "updated_at",
+          "data_type": "timestamp",
+          "is_nullable": true,
+          "is_primary_key": false,
+          "is_foreign_key": false,
+          "references_table": null,
+          "references_column": null
+        }
+      ],
+      "foreign_keys": []
+    }
+  },
+  "canonical_joins": {
+    "claims_to_diagnosis": {
+      "path": "claims \u2192 diagnoses (via CAST)",
+      "sql": "claims c JOIN diagnoses d ON d.id = CAST(c.diagnosis AS UNSIGNED) WHERE c.diagnosis REGEXP '^[0-9]+$'",
+      "description": "Link claims to diagnoses via claims.diagnosis TEXT column (contains diagnosis ID)"
+    },
+    "claims_to_services": {
+      "path": "claims \u2192 claims_services \u2192 services",
+      "sql": "claims c JOIN claims_services cs ON cs.claims_id = c.id JOIN services s ON s.id = cs.services_id",
+      "description": "Link claims to medical services via junction table"
+    },
+    "claims_to_provider": {
+      "path": "claims \u2192 providers",
+      "sql": "claims c JOIN providers p ON c.provider_id = p.id",
+      "description": "Link claims to healthcare providers"
+    },
+    "claims_to_user": {
+      "path": "claims \u2192 users",
+      "sql": "claims c JOIN users u ON c.user_id = u.id",
+      "description": "Link claims to patients (users)"
+    },
+    "user_to_state": {
+      "path": "users \u2192 states",
+      "sql": "users u JOIN states s ON u.state = s.id",
+      "description": "Link users to their state for geographic filtering"
+    },
+    "claims_to_state": {
+      "path": "claims \u2192 users \u2192 states",
+      "sql": "claims c JOIN users u ON c.user_id = u.id JOIN states s ON u.state = s.id",
+      "description": "Link claims to states via user relationship"
+    }
+  },
+  "ddl": {
+    "claims": "-- Healthcare claims submitted by patients\n-- Rows: ~83,854\nCREATE TABLE `claims` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` INT NOT NULL,\n  `provider_id` INT NOT NULL,\n  `agency_id` INT NOT NULL,\n  `client_name` VARCHAR NOT NULL,\n  `claim_unique_id` VARCHAR,\n  `seen_date` DATE NOT NULL,\n  `diagnosis` TEXT NOT NULL,\n  `treatment` TEXT NOT NULL,\n  `claim_level` VARCHAR,\n  `status` INT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `client_id` INT,\n  `authorization_code` VARCHAR,\n  `total_cost` DOUBLE,\n  `prepared_by_id` INT,\n  `checked_by_id` INT,\n  `verified_by_id` INT,\n  `approved_by_id` INT,\n  `prepared_by_date` DATE,\n  `checked_by_date` DATE,\n  `verified_by_date` DATE,\n  `approved_by_date` DATE,\n  `is_signed` TINYINT,\n  `org_id` INT,\n  `dependent_id` INT,\n  `is_out_of_station` TINYINT NOT NULL DEFAULT 0,\n  `deleted_at` TIMESTAMP\n);",
+    "users": "-- System users (patients, providers, admins)\n-- Rows: ~1,308,535\nCREATE TABLE `users` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `role_id` BIGINT,\n  `agency_id` INT,\n  `provider_id` INT,\n  `picture` VARCHAR,\n  `firstname` VARCHAR,\n  `lastname` VARCHAR,\n  `agency_name` VARCHAR,\n  `email` VARCHAR,\n  `tribe` VARCHAR DEFAULT users/default.png,\n  `phone_number` VARCHAR,\n  `user_image` VARCHAR,\n  `user_image_updated_at` DATE,\n  `email_verified_at` TIMESTAMP,\n  `password` VARCHAR,\n  `state` VARCHAR,\n  `localgovt` INT,\n  `address1` VARCHAR,\n  `ward` VARCHAR,\n  `type` VARCHAR NOT NULL,\n  `institutional_id` INT,\n  `job_title` VARCHAR,\n  `means_of_id` VARCHAR,\n  `state_of_origin` VARCHAR,\n  `lga_of_origin` TEXT,\n  `recipient_code` VARCHAR,\n  `dob` DATE,\n  `gender` VARCHAR,\n  `date_id_card_issued` DATE,\n  `education` VARCHAR,\n  `blood` VARCHAR,\n  `genotype` VARCHAR,\n  `remember_token` VARCHAR,\n  `settings` JSON,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `user_role` VARCHAR DEFAULT 0,\n  `id_card_number` VARCHAR,\n  `previous_user_id` BIGINT,\n  `virtual_account` VARCHAR,\n  `point_of_care` VARCHAR,\n  `sector` VARCHAR,\n  `salary_number` VARCHAR,\n  `religion` VARCHAR,\n  `place_of_work` VARCHAR,\n  `nimc_number` VARCHAR,\n  `middlename` VARCHAR,\n  `grade_level` VARCHAR,\n  `date_of_entry` VARCHAR,\n  `marital_status` VARCHAR,\n  `category_of_vulnerable_group` VARCHAR,\n  `community` VARCHAR,\n  `alternate_provider_id` VARCHAR,\n  `signature` VARCHAR,\n  `facility_code` VARCHAR,\n  `enrolled_by` VARCHAR,\n  `org_id` INT,\n  `lga` INT,\n  `occupation` VARCHAR,\n  `phc_sector` VARCHAR,\n  `phc_type` VARCHAR,\n  `phc_general` VARCHAR,\n  `sectorType` VARCHAR,\n  `special_need` VARCHAR,\n  `expiry_date` DATE,\n  `blocked_at` TIMESTAMP,\n  `enabled_user` TINYINT NOT NULL DEFAULT 1,\n  `plan_type` VARCHAR,\n  `deleted_at` TIMESTAMP,\n  FOREIGN KEY (`role_id`) REFERENCES `roles`(`id`)\n);",
+    "service_summaries": "-- Service summary records linking claims to diagnoses\n-- Rows: ~298,436\nCREATE TABLE `service_summaries` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `provider_id` INT,\n  `client_id` INT,\n  `diagnosis` INT,\n  `encounter_outcome` VARCHAR DEFAULT 0,\n  `authorization_code` VARCHAR,\n  `treatment_type` VARCHAR,\n  `date_of_admission` DATE,\n  `date_of_discharge` DATE,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `health_record_id` INT,\n  `agency_id` INT NOT NULL,\n  `claim_id` INT,\n  `dependent_id` INT,\n  `secondary_diagnosis` INT,\n  `is_confirmed` TINYINT,\n  `is_underlying` TINYINT NOT NULL DEFAULT 0,\n  `deleted_at` TIMESTAMP\n);",
+    "diagnoses": "-- Medical diagnosis codes and names\n-- Rows: ~34,830\nCREATE TABLE `diagnoses` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `name` VARCHAR,\n  `symptoms` TEXT,\n  `agency_id` INT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `transmission` TEXT,\n  `diagnosis` TEXT,\n  `treatment` TEXT,\n  `prevention` TEXT,\n  `diagnosis_code` VARCHAR,\n  `is_primary` TINYINT NOT NULL DEFAULT 0,\n  `deleted_at` TIMESTAMP\n);",
+    "providers": "-- Healthcare providers (hospitals, clinics)\n-- Rows: ~4,281\nCREATE TABLE `providers` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT NOT NULL,\n  `provider_id` VARCHAR NOT NULL,\n  `status` TINYINT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "claims_services": "-- Junction table linking claims to services\n-- Rows: ~363,315\nCREATE TABLE `claims_services` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `claims_id` INT,\n  `services_id` INT,\n  `drugs_id` INT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `cost` DOUBLE NOT NULL,\n  `remark_id` INT,\n  `dose` INT NOT NULL DEFAULT 1,\n  `frequency` INT NOT NULL DEFAULT 1,\n  `days` INT NOT NULL DEFAULT 1,\n  `vetted_price` DOUBLE,\n  `verified_price` DOUBLE,\n  `vetted_dose` INT NOT NULL DEFAULT 1,\n  `vetted_frequency` INT NOT NULL DEFAULT 1,\n  `vetted_days` INT NOT NULL DEFAULT 1,\n  `verified_dose` INT NOT NULL DEFAULT 1,\n  `verified_frequency` INT NOT NULL DEFAULT 1,\n  `verified_days` INT NOT NULL DEFAULT 1\n);",
+    "services": "-- Medical services catalog\n-- Rows: ~3,578\nCREATE TABLE `services` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `service_category_id` INT,\n  `kgshia_code` VARCHAR,\n  `price` DOUBLE,\n  `description` TEXT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `agency_id` INT\n);",
+    "states": "-- Nigerian states for geographic filtering\n-- Rows: ~718\nCREATE TABLE `states` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `name` VARCHAR NOT NULL,\n  `country_id` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "dependants": "-- Patient dependents\n-- Rows: ~348,451\nCREATE TABLE `dependants` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` INT,\n  `enrolle_number` VARCHAR,\n  `firstname` VARCHAR NOT NULL,\n  `lastname` VARCHAR,\n  `email` VARCHAR,\n  `phone_number` VARCHAR,\n  `relationShipType` VARCHAR NOT NULL,\n  `provider` INT,\n  `dob` DATE,\n  `gender` VARCHAR,\n  `image` VARCHAR,\n  `state` VARCHAR,\n  `lga` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `middle_name` VARCHAR,\n  `institution_attending` VARCHAR,\n  `enrolled_by` INT,\n  `id_card_number` VARCHAR,\n  `agency_id` INT NOT NULL,\n  `expiry_date` DATE,\n  `enabled_user` TINYINT NOT NULL DEFAULT 1,\n  `is_civil_servant` TINYINT NOT NULL DEFAULT 0,\n  `nimc_number` VARCHAR,\n  `deleted_at` TIMESTAMP,\n  `blood` VARCHAR\n);",
+    "health_records": "-- Patient health records\n-- Rows: ~300,801\nCREATE TABLE `health_records` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `provider_id` INT,\n  `professional_id` INT NOT NULL,\n  `appointment_id` INT,\n  `patient_id` INT NOT NULL,\n  `reasonVisit` TEXT,\n  `testResult` TEXT,\n  `drVisited` VARCHAR,\n  `medications` TEXT NOT NULL,\n  `documents` VARCHAR NOT NULL,\n  `notes` TEXT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `date_of_visit` DATE,\n  `encounter_id` VARCHAR NOT NULL,\n  `dependent_id` INT\n);",
+    "facility_accreditations": "-- Provider accreditation status\n-- Rows: ~6,034\nCREATE TABLE `facility_accreditations` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `quality_assurance_id` INT NOT NULL,\n  `name_of_facility` INT NOT NULL,\n  `address` VARCHAR NOT NULL,\n  `ward` INT NOT NULL,\n  `localgovt` INT NOT NULL,\n  `state` INT NOT NULL,\n  `phone_number` VARCHAR,\n  `email` VARCHAR,\n  `facility_type` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "transactions": "-- Financial transactions\n-- Rows: ~2,348\nCREATE TABLE `transactions` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT,\n  `provider_id` INT,\n  `user_id` INT,\n  `description` TEXT,\n  `amount` DOUBLE,\n  `type` VARCHAR,\n  `status` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `transaction_ref` MEDIUMTEXT NOT NULL,\n  `batch_id` INT\n);",
+    "authorization_codes": "-- Pre-authorization codes for claims\n-- Rows: ~103,955\nCREATE TABLE `authorization_codes` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT NOT NULL,\n  `requested_by` INT,\n  `created_by` INT,\n  `principal_id` INT,\n  `dependent_id` INT,\n  `code_created` VARCHAR,\n  `date_requested` DATE NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `expiry_date` DATE,\n  `is_code_used` TINYINT NOT NULL DEFAULT 0,\n  `provider_id` INT,\n  `org_id` INT,\n  `service_summary_id` INT,\n  `referred_to_facility` INT,\n  `status` VARCHAR NOT NULL DEFAULT pending,\n  `is_corridor` TINYINT NOT NULL DEFAULT 0,\n  `secondary_agency_id` BIGINT,\n  `deleted_at` TIMESTAMP\n);",
+    "quality_assurances": "-- Quality assurance records\n-- Rows: ~6,008\nCREATE TABLE `quality_assurances` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `facility_id` INT,\n  `form_id` BIGINT NOT NULL DEFAULT 1,\n  `accreditation_category` VARCHAR,\n  `quality_assurance_type` VARCHAR,\n  `name_of_contact_person` VARCHAR,\n  `signature_of_contact_person` VARCHAR,\n  `team_leader` VARCHAR,\n  `signature_of_monitoring_team_leader` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `agency_id` INT NOT NULL,\n  `status` VARCHAR NOT NULL DEFAULT pending,\n  `further_comments` TEXT\n);",
+    "drugs": "-- Pharmaceutical drug catalog\n-- Rows: ~3,948\nCREATE TABLE `drugs` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `drug_name` VARCHAR NOT NULL,\n  `dosage` VARCHAR NOT NULL,\n  `strengths` VARCHAR,\n  `presentation` VARCHAR,\n  `price` DOUBLE NOT NULL,\n  `sub_category_id` INT,\n  `category_id` INT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `agency_id` INT,\n  `unit` VARCHAR,\n  `primary_price` DOUBLE,\n  `secondary_price` DOUBLE,\n  `tertiary_price` DOUBLE\n);",
+    "activity_log": "CREATE TABLE `activity_log` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `log_name` VARCHAR,\n  `description` TEXT NOT NULL,\n  `subject_type` VARCHAR,\n  `subject_id` BIGINT,\n  `causer_type` VARCHAR,\n  `causer_id` BIGINT,\n  `properties` JSON,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "services_renderreds": "CREATE TABLE `services_renderreds` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `service_summary_id` INT,\n  `service_id` INT,\n  `drug_id` INT,\n  `service_type` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `dose` INT NOT NULL,\n  `frequency` INT NOT NULL,\n  `days` INT NOT NULL,\n  `total_cost` DOUBLE NOT NULL\n);",
+    "accreditation_responses": "CREATE TABLE `accreditation_responses` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `quality_assurance_id` INT NOT NULL,\n  `quality_assurance_item_id` INT NOT NULL,\n  `response` VARCHAR NOT NULL,\n  `score` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "comments": "-- Comments on claims/records\n-- Rows: ~11,341\nCREATE TABLE `comments` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` INT NOT NULL,\n  `claim_id` INT,\n  `body` MEDIUMTEXT NOT NULL,\n  `service_summary_id` INT,\n  `provider_id` INT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `complaint_id` INT,\n  `authorization_code_id` INT,\n  `claim_service_id` INT,\n  `transaction_id` BIGINT\n);",
+    "documents": "-- Uploaded documents\n-- Rows: ~85,544\nCREATE TABLE `documents` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT,\n  `provider_id` INT,\n  `user_id` VARCHAR,\n  `type` VARCHAR NOT NULL,\n  `type_id` INT,\n  `document` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `name` VARCHAR,\n  `previous_user_id` BIGINT,\n  `deleted_at` DATE\n);",
+    "user_dumps": "CREATE TABLE `user_dumps` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` INT,\n  `agency_id` INT,\n  `provider_id` INT,\n  `picture` VARCHAR,\n  `firstname` VARCHAR,\n  `lastname` VARCHAR,\n  `agency_name` VARCHAR,\n  `email` VARCHAR,\n  `phone_number` VARCHAR,\n  `user_image` LONGTEXT,\n  `nimc_number` VARCHAR,\n  `email_verified_at` TIMESTAMP,\n  `password` VARCHAR,\n  `state` VARCHAR,\n  `localgovt` VARCHAR,\n  `address1` VARCHAR,\n  `ward` VARCHAR,\n  `type` VARCHAR,\n  `institutional_id` INT,\n  `job_title` VARCHAR,\n  `agencyAddress` VARCHAR,\n  `agencyWebsite` VARCHAR,\n  `agencyDescription` TEXT,\n  `agencyActive` INT,\n  `dob` DATE,\n  `middlename` VARCHAR,\n  `marital_status` VARCHAR,\n  `category_of_vulnerable_group` VARCHAR,\n  `enrolled_by` VARCHAR,\n  `org_id` VARCHAR,\n  `lga` VARCHAR,\n  `gender` VARCHAR,\n  `height` VARCHAR,\n  `weight` VARCHAR,\n  `blood` VARCHAR,\n  `genotype` VARCHAR,\n  `id_card_number` VARCHAR,\n  `user_role` VARCHAR DEFAULT 0,\n  `point_of_care` VARCHAR,\n  `sector` VARCHAR,\n  `salary_number` VARCHAR,\n  `fingerprint` VARCHAR,\n  `place_of_work` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "change_providers": "CREATE TABLE `change_providers` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `client_id` INT,\n  `previous_health_facility` VARCHAR,\n  `new_health_facility` VARCHAR,\n  `reason_for_change` VARCHAR,\n  `rm_date` DATE,\n  `status` VARCHAR,\n  `prepared_by` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `agency_id` INT NOT NULL\n);",
+    "quality_assurances_accreditation_services": "CREATE TABLE `quality_assurances_accreditation_services` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `quality_assurance_id` INT NOT NULL,\n  `accreditation_service_id` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "service_drug_sectors": "CREATE TABLE `service_drug_sectors` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `name` VARCHAR NOT NULL,\n  `drug_id` INT,\n  `service_id` INT,\n  `price` DOUBLE NOT NULL DEFAULT 0.00,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "wards": "CREATE TABLE `wards` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `lg_id` INT NOT NULL,\n  `ward_name` VARCHAR NOT NULL,\n  `ward_short_name` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `state_id` INT\n);",
+    "ministry_models": "CREATE TABLE `ministry_models` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `name` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `agency_id` INT,\n  `previous_ministry_id` BIGINT,\n  `type` VARCHAR,\n  `hmo_id` BIGINT\n);",
+    "options": "CREATE TABLE `options` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `quality_assurance_item_id` INT NOT NULL,\n  `option_name` VARCHAR NOT NULL,\n  `score_value` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "quality_assurance_items": "CREATE TABLE `quality_assurance_items` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `form_id` INT,\n  `item_name` VARCHAR,\n  `response_info` VARCHAR,\n  `scores` VARCHAR,\n  `remarks` TEXT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `quality_assurance_items_categories_id` INT,\n  `quality_assurance_items_sub_categories_id` INT,\n  `agency_id` INT NOT NULL,\n  `is_scoring` TINYINT NOT NULL DEFAULT 1,\n  `item_order` INT\n);",
+    "local_governments": "CREATE TABLE `local_governments` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `state_id` INT NOT NULL,\n  `local_name` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `abr` VARCHAR\n);",
+    "claims_paymentorders": "CREATE TABLE `claims_paymentorders` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `claims_id` INT NOT NULL,\n  `paymentorder_id` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "data_rows": "CREATE TABLE `data_rows` (\n  `id` INT NOT NULL PRIMARY KEY,\n  `data_type_id` INT NOT NULL,\n  `field` VARCHAR NOT NULL,\n  `type` VARCHAR NOT NULL,\n  `display_name` VARCHAR NOT NULL,\n  `required` TINYINT NOT NULL DEFAULT 0,\n  `browse` TINYINT NOT NULL DEFAULT 1,\n  `read` TINYINT NOT NULL DEFAULT 1,\n  `edit` TINYINT NOT NULL DEFAULT 1,\n  `add` TINYINT NOT NULL DEFAULT 1,\n  `delete` TINYINT NOT NULL DEFAULT 1,\n  `details` TEXT,\n  `order` INT NOT NULL DEFAULT 1,\n  FOREIGN KEY (`data_type_id`) REFERENCES `data_types`(`id`)\n);",
+    "drugs_sub_categories": "CREATE TABLE `drugs_sub_categories` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `category_id` INT,\n  `sub_category_name` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "permissions": "CREATE TABLE `permissions` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `key` VARCHAR NOT NULL,\n  `table_name` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "enrollment_users": "CREATE TABLE `enrollment_users` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `orgenrol_id` INT NOT NULL,\n  `user_id` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "migrations": "CREATE TABLE `migrations` (\n  `id` INT NOT NULL PRIMARY KEY,\n  `migration` VARCHAR NOT NULL,\n  `batch` INT NOT NULL\n);",
+    "permission_role": "CREATE TABLE `permission_role` (\n  `permission_id` BIGINT NOT NULL PRIMARY KEY,\n  `role_id` BIGINT NOT NULL PRIMARY KEY,\n  FOREIGN KEY (`permission_id`) REFERENCES `permissions`(`id`),\n  FOREIGN KEY (`role_id`) REFERENCES `roles`(`id`)\n);",
+    "ratings": "CREATE TABLE `ratings` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` BIGINT NOT NULL,\n  `provider_id` BIGINT,\n  `service_summary_id` BIGINT,\n  `score` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "quality_assurance_items_categories": "CREATE TABLE `quality_assurance_items_categories` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT NOT NULL,\n  `accreditation_services_id` INT NOT NULL,\n  `category_belongs_to` VARCHAR NOT NULL,\n  `category_name` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `is_personnel` TINYINT NOT NULL,\n  `form_id` BIGINT NOT NULL DEFAULT 1\n);",
+    "paymentorders": "CREATE TABLE `paymentorders` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `payment_number` VARCHAR NOT NULL,\n  `user_id` INT NOT NULL,\n  `agency_id` INT NOT NULL,\n  `provider_id` INT,\n  `letter_of_address` TEXT,\n  `type` VARCHAR NOT NULL,\n  `status` VARCHAR NOT NULL DEFAULT pending,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `payment_method` VARCHAR NOT NULL DEFAULT offline\n);",
+    "drug_categories": "CREATE TABLE `drug_categories` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `category_name` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "org_enrolls": "CREATE TABLE `org_enrolls` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT NOT NULL,\n  `organization_name` VARCHAR NOT NULL,\n  `phone_number` VARCHAR NOT NULL,\n  `email` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `user_id` INT,\n  `category` VARCHAR,\n  `tpa_id` VARCHAR,\n  `org_status` TINYINT NOT NULL DEFAULT 1,\n  `previous_hmo_id` BIGINT\n);",
+    "data_types": "CREATE TABLE `data_types` (\n  `id` INT NOT NULL PRIMARY KEY,\n  `name` VARCHAR NOT NULL,\n  `slug` VARCHAR NOT NULL,\n  `display_name_singular` VARCHAR NOT NULL,\n  `display_name_plural` VARCHAR NOT NULL,\n  `icon` VARCHAR,\n  `model_name` VARCHAR,\n  `policy_name` VARCHAR,\n  `controller` VARCHAR,\n  `description` VARCHAR,\n  `generate_permissions` TINYINT NOT NULL DEFAULT 0,\n  `server_side` TINYINT NOT NULL DEFAULT 0,\n  `details` TEXT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "menu_items": "CREATE TABLE `menu_items` (\n  `id` INT NOT NULL PRIMARY KEY,\n  `menu_id` INT,\n  `title` VARCHAR NOT NULL,\n  `url` VARCHAR NOT NULL,\n  `target` VARCHAR NOT NULL DEFAULT _self,\n  `icon_class` VARCHAR,\n  `color` VARCHAR,\n  `parent_id` INT,\n  `order` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP,\n  `route` VARCHAR,\n  `parameters` TEXT,\n  FOREIGN KEY (`menu_id`) REFERENCES `menus`(`id`)\n);",
+    "authorizationcode_services": "CREATE TABLE `authorizationcode_services` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` BIGINT NOT NULL,\n  `authorizationcode_id` BIGINT NOT NULL,\n  `drug_id` BIGINT,\n  `service_id` BIGINT,\n  `dose` INT NOT NULL DEFAULT 1,\n  `frequency` INT NOT NULL DEFAULT 1,\n  `days` INT NOT NULL DEFAULT 1,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "service_categories": "CREATE TABLE `service_categories` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `category_name` VARCHAR,\n  `is_laboratory_test` TINYINT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "remarks": "CREATE TABLE `remarks` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` INT NOT NULL,\n  `agency_id` INT NOT NULL,\n  `remark_code` VARCHAR NOT NULL,\n  `name` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "forms": "CREATE TABLE `forms` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` BIGINT NOT NULL,\n  `name` VARCHAR NOT NULL,\n  `description` MEDIUMTEXT,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "fingerprints": "CREATE TABLE `fingerprints` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `user_id` INT NOT NULL,\n  `leftfour` VARCHAR,\n  `rightfour` VARCHAR,\n  `thumbs` VARCHAR,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "service_summary_diagnosis": "CREATE TABLE `service_summary_diagnosis` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `service_summary_id` INT NOT NULL,\n  `diagnosis_id` INT NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);",
+    "accreditation_services": "CREATE TABLE `accreditation_services` (\n  `id` BIGINT NOT NULL PRIMARY KEY,\n  `agency_id` INT NOT NULL,\n  `service_code` VARCHAR NOT NULL,\n  `service_name` VARCHAR NOT NULL,\n  `created_at` TIMESTAMP,\n  `updated_at` TIMESTAMP\n);"
+  }
+}

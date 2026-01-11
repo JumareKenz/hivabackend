@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-01-01T15:11:37.822208",
+    "question": "most common diagnosis",
+    "sql": "SELECT d.name, COUNT(*) FROM ...",
+    "category": "operational",
+    "validated_by": "test_user"
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.665693",
+    "question": "most common diagnosis",
+    "sql": "SELECT d.name, COUNT(*) FROM ...",
+    "category": "operational",
+    "validated_by": "test_user"
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.879594",
+    "question": "most common diagnosis",
+    "sql": "SELECT d.name, COUNT(*) FROM ...",
+    "category": "operational",
+    "validated_by": "test_user"
+  }
+]

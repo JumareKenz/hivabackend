@@ -1,0 +1,2848 @@
+[
+  {
+    "timestamp": "2026-01-01T15:11:37.823629",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:11:37.823736",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:11:37.823889",
+    "metric_type": "response_time",
+    "value": 150.5,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:11:37.824220",
+    "metric_type": "user_satisfaction",
+    "value": 4.5,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:11:37.824340",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.666991",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.667182",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.667411",
+    "metric_type": "response_time",
+    "value": 150.5,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.667602",
+    "metric_type": "user_satisfaction",
+    "value": 4.5,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.667774",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.668464",
+    "metric_type": "integration_test",
+    "value": true,
+    "metadata": {
+      "query": "most common diagnosis last year"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.881561",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.881839",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.882230",
+    "metric_type": "response_time",
+    "value": 150.5,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.882548",
+    "metric_type": "user_satisfaction",
+    "value": 4.5,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.882806",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.883830",
+    "metric_type": "integration_test",
+    "value": true,
+    "metadata": {
+      "query": "most common diagnosis last year"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T15:14:51.862893",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T15:14:51.863215",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 3,
+      "query": "show disease with most patients"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T16:29:31.343896",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:29:31.366004",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS total_claims\\nFROM claims c\\nJOIN service_summaries ss ON ss.cla' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T16:29:49.874892",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:29:49.898272",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS total_claims\\nFROM claims c\\nJOIN service_summaries ss ON ss.cla' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T16:43:23.158136",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:43:58.079915",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:46:36.796221",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:53:52.668620",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:54:01.087863",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:57:51.410487",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:58:26.624722",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:58:26.676280",
+    "metric_type": "response_time",
+    "value": 50.37212371826172,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T16:58:26.838649",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 79,
+      "execution_time_ms": 52.158355712890625
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:02:50.038435",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:02:50.132202",
+    "metric_type": "response_time",
+    "value": 92.16189384460449,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:02:50.229609",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 79,
+      "execution_time_ms": 94.61450576782227
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:11:15.492913",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:11:15.512194",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:12:02.040296",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:12:02.057489",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count\\nFROM claims c\\nJOIN users u ON c.user_id = u.id\\nJ' at line 3\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:12:37.521050",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:12:37.576600",
+    "metric_type": "response_time",
+    "value": 53.93409729003906,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:12:37.661433",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 79,
+      "execution_time_ms": 55.811405181884766
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:16:39.526055",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:16:39.583828",
+    "metric_type": "response_time",
+    "value": 55.63187599182129,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:16:39.656527",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 79,
+      "execution_time_ms": 57.79910087585449
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:17:42.172186",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:17:42.191014",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:47:25.522886",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:47:25.541640",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:48:53.747558",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:48:53.765862",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:51:54.575701",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:51:54.594624",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T17:53:02.719337",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T17:53:02.737585",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:27:41.552540",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:27:41.571356",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:29:31.157875",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:29:31.176532",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:29:41.625597",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:29:41.680086",
+    "metric_type": "response_time",
+    "value": 53.59792709350586,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:29:42.429511",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 92,
+      "execution_time_ms": 55.49764633178711
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:32:37.506583",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:32:37.525848",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:33:03.420789",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:33:03.481343",
+    "metric_type": "response_time",
+    "value": 59.11421775817871,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:33:03.899814",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 92,
+      "execution_time_ms": 60.46175956726074
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:34:10.643133",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:34:10.662110",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:35:21.528563",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:35:21.547313",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T22:37:28.119128",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T22:37:28.137905",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN users u ON c.user_id = u.id J' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:40:25.918889",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:40:25.940565",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS total_claims FROM claims c' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:40:35.308740",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:40:35.359575",
+    "metric_type": "response_time",
+    "value": 49.765586853027344,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:40:35.361924",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 52.06179618835449
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:42:27.448693",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:42:33.636792",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:42:47.493499",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:42:51.722698",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:42:51.745130",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count FROM claims c JOIN service_summaries ss ON ss.cl' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:42:56.296218",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:48:59.974780",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:48:59.998198",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DISTINCT c.id) AS patient_count \\nFROM \\n    claims c \\nJOIN \\n    service_summaries' at line 3\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:49:53.938181",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "Phase 4 Violation: Placeholder state filter detected."
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:51:22.469797",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:52:40.810145",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:54:11.767419",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:54:15.879590",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:54:19.153499",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:57:36.561133",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-01T23:57:36.579669",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1140, \"In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'hip.d.name'; this is incompatible with sql_mode=only_full_group_by\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-01T23:59:02.354916",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T00:00:23.556838",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T00:00:23.575302",
+    "metric_type": "response_time",
+    "value": 15.756845474243164,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T00:00:23.577422",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 17.83275604248047
+    }
+  },
+  {
+    "timestamp": "2026-01-02T00:06:12.172429",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T00:06:12.199625",
+    "metric_type": "response_time",
+    "value": 24.960041046142578,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T00:06:12.202134",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 27.429819107055664
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:25:22.944527",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:25:22.962503",
+    "metric_type": "response_time",
+    "value": 15.790462493896484,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:25:22.964412",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 17.657995223999023
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:25:31.526174",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:25:31.543248",
+    "metric_type": "response_time",
+    "value": 16.02768898010254,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:25:31.544353",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 17.094135284423828
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:28:42.176900",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:28:42.195073",
+    "metric_type": "response_time",
+    "value": 16.739845275878906,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:28:42.196604",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 18.212556838989258
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:40:59.582304",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:40:59.982723",
+    "metric_type": "response_time",
+    "value": 399.3966579437256,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:41:00.642734",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 8,
+      "execution_time_ms": 400.70033073425293
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:42:10.024646",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:10.426312",
+    "metric_type": "response_time",
+    "value": 400.5129337310791,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:10.564828",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 8,
+      "execution_time_ms": 401.74245834350586
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:42:25.065338",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:25.423738",
+    "metric_type": "response_time",
+    "value": 356.85253143310547,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:25.560248",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 8,
+      "execution_time_ms": 358.2315444946289
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:42:33.044555",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:33.408393",
+    "metric_type": "response_time",
+    "value": 362.36000061035156,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:33.573115",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 8,
+      "execution_time_ms": 364.08519744873047
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:42:42.802083",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:42.819889",
+    "metric_type": "response_time",
+    "value": 16.36815071105957,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:42.821350",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 17.773151397705078
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:42:52.572460",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:52.589683",
+    "metric_type": "response_time",
+    "value": 15.938520431518555,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:42:52.591212",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 0,
+      "execution_time_ms": 17.435312271118164
+    }
+  },
+  {
+    "timestamp": "2026-01-02T09:43:23.196639",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:43:23.214261",
+    "metric_type": "response_time",
+    "value": 16.243934631347656,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T09:43:23.215584",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 0,
+      "execution_time_ms": 17.519235610961914
+    }
+  },
+  {
+    "timestamp": "2026-01-02T10:01:11.027088",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T10:01:11.044548",
+    "metric_type": "response_time",
+    "value": 16.257524490356445,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-02T10:01:11.046217",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 17.87590980529785
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:27:08.874249",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "Phase 4 Violation: Cannot use claims.diagnosis directly. Must join through canonical path: claims \u2192 service_summaries \u2192 diagnoses (via ss.diagnosis = d.id) to get diagnoses.name. Query: show me which disease has the highest patients in kogi state"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:28:48.314383",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:28:48.631767",
+    "metric_type": "response_time",
+    "value": 315.28639793395996,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:28:48.633780",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 317.2426223754883
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:29:12.853028",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:29:13.024631",
+    "metric_type": "response_time",
+    "value": 170.32432556152344,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:29:13.679833",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 171.8590259552002
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:29:35.317432",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:29:35.479099",
+    "metric_type": "response_time",
+    "value": 160.2339744567871,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:29:35.631146",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 161.85402870178223
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:45:04.828938",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:45:04.846397",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOIN users u ON c.user_id = u.id JOIN states s ON u.state = s.id WHERE s.name LI' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:46:03.748681",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:46:03.777828",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOIN users u ON c.user_id = u.id JOIN states s ON u.state = s.id WHERE s.name LI' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:46:40.033494",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:46:40.218468",
+    "metric_type": "response_time",
+    "value": 183.22253227233887,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:46:40.372680",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 185.17017364501953
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:49:40.155299",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:49:40.619765",
+    "metric_type": "response_time",
+    "value": 462.9216194152832,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:49:40.621525",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 464.6272659301758
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:49:55.595918",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:49:55.891705",
+    "metric_type": "response_time",
+    "value": 293.8117980957031,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:49:55.893446",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 295.4895496368408
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:50:23.698371",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:50:24.152490",
+    "metric_type": "response_time",
+    "value": 452.0430564880371,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:50:24.154606",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 454.09631729125977
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:50:28.129544",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:50:28.406279",
+    "metric_type": "response_time",
+    "value": 275.45619010925293,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:50:28.407704",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 276.8285274505615
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:52:49.572897",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:52:49.593870",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOIN users u ON c.user_id = u.id JOIN states s ON u.state = s.id WHERE s.name LI' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:53:01.067736",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:53:01.086598",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'JOIN users u ON c.user_id = u.id JOIN states s ON u.state = s.id WHERE s.name LI' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:53:55.422182",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:53:55.748330",
+    "metric_type": "response_time",
+    "value": 323.6668109893799,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:53:55.750972",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 326.22361183166504
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:54:22.801123",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:54:23.084002",
+    "metric_type": "response_time",
+    "value": 280.31373023986816,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:54:23.086246",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 282.49526023864746
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:57:03.010227",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:57:03.318631",
+    "metric_type": "response_time",
+    "value": 306.34093284606934,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:57:03.320885",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 308.5312843322754
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:59:30.562265",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:59:30.864498",
+    "metric_type": "response_time",
+    "value": 299.3745803833008,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:59:30.866890",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 301.713228225708
+    }
+  },
+  {
+    "timestamp": "2026-01-06T17:59:34.804258",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:59:35.089326",
+    "metric_type": "response_time",
+    "value": 282.9701900482178,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T17:59:35.091307",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 284.87682342529297
+    }
+  },
+  {
+    "timestamp": "2026-01-06T19:37:08.527582",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T19:37:08.614250",
+    "metric_type": "response_time",
+    "value": 83.91594886779785,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T19:37:08.616302",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 13,
+      "execution_time_ms": 85.8926773071289
+    }
+  },
+  {
+    "timestamp": "2026-01-06T19:37:44.276937",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "Query contains Cartesian join (missing ON clause). All joins must have explicit join conditions."
+    }
+  },
+  {
+    "timestamp": "2026-01-06T19:37:48.329614",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T19:37:48.346664",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 's.name' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T19:37:52.324837",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-06T19:38:21.530692",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T19:38:21.569993",
+    "metric_type": "response_time",
+    "value": 37.8117561340332,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T19:38:21.875801",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 39.24560546875
+    }
+  },
+  {
+    "timestamp": "2026-01-06T20:04:16.338055",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T20:04:16.382534",
+    "metric_type": "response_time",
+    "value": 42.290687561035156,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-06T20:04:16.568335",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 44.63768005371094
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:32:09.876751",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:32:09.894644",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 's.name' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:32:09.896803",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "'NoneType' object has no attribute 'strip'"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:35:40.443170",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "No SQL query provided"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:36:00.342937",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:36:00.362059",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 'u.id' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:36:00.364659",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "'NoneType' object has no attribute 'strip'"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:36:05.122323",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "No SQL query provided"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:36:09.472276",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:36:09.520910",
+    "metric_type": "response_time",
+    "value": 46.57769203186035,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:36:09.523705",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 49.31330680847168
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:36:20.126338",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "No SQL query provided"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:36:20.165415",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:36:20.215319",
+    "metric_type": "response_time",
+    "value": 46.8902587890625,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:36:20.631711",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 50.16732215881348
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:37:42.953986",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:37:43.424112",
+    "metric_type": "response_time",
+    "value": 467.81134605407715,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:37:43.426879",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 470.51119804382324
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:38:13.660851",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:38:13.680146",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:38:46.326879",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:38:46.391137",
+    "metric_type": "response_time",
+    "value": 62.155961990356445,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:38:46.393034",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 64.00561332702637
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:39:10.176169",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:39:10.361426",
+    "metric_type": "response_time",
+    "value": 182.96432495117188,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:39:10.614285",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 185.408353805542
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:39:10.634153",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:39:10.684432",
+    "metric_type": "response_time",
+    "value": 47.522544860839844,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:39:10.839773",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 49.359798431396484
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:39:24.377492",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:39:24.397376",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1109, \"Unknown table 'c' in field list\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:39:29.210178",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:39:29.232653",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:40:28.996297",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:40:29.058801",
+    "metric_type": "response_time",
+    "value": 57.61289596557617,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:40:29.061109",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "TREND_TIME_SERIES",
+      "row_count": 28,
+      "execution_time_ms": 59.85689163208008
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:40:34.030596",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:40:34.186813",
+    "metric_type": "response_time",
+    "value": 153.97143363952637,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:40:34.189112",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 13,
+      "execution_time_ms": 156.21256828308105
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:40:46.221934",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "Query contains Cartesian join (missing ON clause). All joins must have explicit join conditions."
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:41:27.677163",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:41:27.697438",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 'c' in 'where clause'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:41:54.851473",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:41:55.279019",
+    "metric_type": "response_time",
+    "value": 425.54569244384766,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:41:55.281214",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 427.68406867980957
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:41:59.168462",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:41:59.519104",
+    "metric_type": "response_time",
+    "value": 348.59275817871094,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:41:59.665318",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 353.70683670043945
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:43:00.253238",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:00.342702",
+    "metric_type": "response_time",
+    "value": 86.5020751953125,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:00.612314",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 13,
+      "execution_time_ms": 91.46738052368164
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:43:08.764339",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:08.790076",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1109, \"Unknown table 'c' in field list\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:43:24.302691",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:24.553563",
+    "metric_type": "response_time",
+    "value": 249.1130828857422,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:24.677727",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 251.10840797424316
+    }
+  },
+  {
+    "timestamp": "2026-01-07T13:43:28.649455",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:29.015380",
+    "metric_type": "response_time",
+    "value": 363.7831211090088,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T13:43:29.018176",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 366.50872230529785
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:04:17.967642",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:18.164022",
+    "metric_type": "response_time",
+    "value": 192.59953498840332,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:18.495563",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 5,
+      "execution_time_ms": 195.0054168701172
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:04:23.673818",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:23.697849",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1140, \"In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'hip.d.name'; this is incompatible with sql_mode=only_full_group_by\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:04:28.213120",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:04:28.232875",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:28.276978",
+    "metric_type": "response_time",
+    "value": 41.68391227722168,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:28.410502",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 43.89333724975586
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:04:46.749321",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:46.766780",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 'u' in 'on clause'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:04:51.164573",
+    "metric_type": "response_time",
+    "value": 4413.161754608154,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:04:51.167301",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 4415.825605392456
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:08:55.699727",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:08:55.726721",
+    "metric_type": "response_time",
+    "value": 25.0396728515625,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:08:55.728882",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 27.141332626342773
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:08:59.795153",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:08:59.846492",
+    "metric_type": "response_time",
+    "value": 48.92277717590332,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:08:59.992732",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 51.21970176696777
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:09:00.086687",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:00.134408",
+    "metric_type": "response_time",
+    "value": 44.91138458251953,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:00.137330",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 47.772884368896484
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:09:03.868137",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:03.913721",
+    "metric_type": "response_time",
+    "value": 42.700767517089844,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:03.916383",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "COST_FINANCIAL",
+      "row_count": 1,
+      "execution_time_ms": 45.29237747192383
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:09:08.615388",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:08.747939",
+    "metric_type": "response_time",
+    "value": 129.52709197998047,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:08.750600",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 132.11441040039062
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:09:12.906018",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:13.233043",
+    "metric_type": "response_time",
+    "value": 324.4035243988037,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:13.386132",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 10,
+      "execution_time_ms": 326.7674446105957
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:09:40.014376",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:09:40.485340",
+    "metric_type": "response_time",
+    "value": 468.8715934753418,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:06.299266",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "COST_FINANCIAL",
+      "row_count": 11910,
+      "execution_time_ms": 482.96451568603516
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:14.875990",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:15.204513",
+    "metric_type": "response_time",
+    "value": 319.9031352996826,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:15.414883",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 10,
+      "execution_time_ms": 322.49999046325684
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:19.597731",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:19.917807",
+    "metric_type": "response_time",
+    "value": 315.43970108032227,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:19.924318",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 321.87533378601074
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:24.048783",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:24.249824",
+    "metric_type": "response_time",
+    "value": 198.11367988586426,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:24.476922",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 8,
+      "execution_time_ms": 203.54223251342773
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:28.567177",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:28.589504",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 's.name' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:32.679448",
+    "metric_type": "response_time",
+    "value": 4110.127925872803,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:32.683038",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 1,
+      "execution_time_ms": 4113.592147827148
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:44.781483",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:44.801708",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:53.001059",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:53.024997",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(PARTITION BY s.name ORDER BY COUNT(*) DESC) AS rn FROM claims c JOIN users u ON' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:11:57.168704",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:11:57.567206",
+    "metric_type": "response_time",
+    "value": 395.9040641784668,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:13:14.499309",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 10105,
+      "execution_time_ms": 412.4269485473633
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:13:18.643772",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:13:18.859138",
+    "metric_type": "response_time",
+    "value": 211.2710475921631,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:13:18.864470",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 216.50981903076172
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:13:22.888897",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:13:23.344476",
+    "metric_type": "response_time",
+    "value": 452.70562171936035,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:13:57.311713",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 10503,
+      "execution_time_ms": 481.5347194671631
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:14:01.409802",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:01.863267",
+    "metric_type": "response_time",
+    "value": 446.7451572418213,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:01.891809",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "COST_FINANCIAL",
+      "row_count": 11910,
+      "execution_time_ms": 475.0967025756836
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:14:06.012174",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:06.219960",
+    "metric_type": "response_time",
+    "value": 201.1415958404541,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:06.234584",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "COST_FINANCIAL",
+      "row_count": 8,
+      "execution_time_ms": 204.12397384643555
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:14:37.544430",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:37.590245",
+    "metric_type": "response_time",
+    "value": 42.278289794921875,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:37.594984",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 1,
+      "execution_time_ms": 46.942949295043945
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:14:41.666518",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "Phase 4 Violation: SELECT * or table.* is forbidden. Must use explicit column names. Pattern matched: SELECT\\s+\\*. Query: Show claims where diagnosis is empty"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:14:45.688920",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:14:45.712567",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:15:10.303891",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:15:10.327158",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1064, \"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:15:14.322755",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:15:14.341571",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 's.name' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:15:22.415651",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:15:22.439585",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 's.name' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:15:30.795089",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:15:30.845145",
+    "metric_type": "response_time",
+    "value": 46.89335823059082,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:15:30.849323",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 1,
+      "execution_time_ms": 51.004886627197266
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:15:31.326342",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "No SQL query provided"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:16:46.842664",
+    "metric_type": "sql_validity",
+    "value": false,
+    "metadata": {
+      "error": "Phase 4 Violation: SELECT * or table.* is forbidden. Must use explicit column names. Pattern matched: SELECT\\s+\\*. Query: Show claims where diagnosis is empty"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:16:50.718521",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:16:50.741849",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1109, \"Unknown table 'c' in field list\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:16:58.776750",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:16:58.794983",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1054, \"Unknown column 's.name' in 'field list'\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T15:17:06.805197",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:17:06.943364",
+    "metric_type": "response_time",
+    "value": 133.62789154052734,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T15:17:07.152871",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "TREND_TIME_SERIES",
+      "row_count": 17,
+      "execution_time_ms": 137.64166831970215
+    }
+  },
+  {
+    "timestamp": "2026-01-07T19:35:48.395747",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:35:48.599349",
+    "metric_type": "response_time",
+    "value": 198.8847255706787,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:35:48.606313",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 205.77692985534668
+    }
+  },
+  {
+    "timestamp": "2026-01-07T19:36:28.280988",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:36:28.300076",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1140, \"In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'hip.d.name'; this is incompatible with sql_mode=only_full_group_by\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T19:36:32.286275",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1140, \"In aggregated query without GROUP BY, expression #1 of SELECT list contains nonaggregated column 'hip.d.name'; this is incompatible with sql_mode=only_full_group_by\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T19:36:36.250390",
+    "metric_type": "query_failure",
+    "value": true,
+    "metadata": {
+      "error": "Query execution failed: (1109, \"Unknown table 'd' in field list\")"
+    }
+  },
+  {
+    "timestamp": "2026-01-07T19:37:01.423860",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:37:01.919991",
+    "metric_type": "response_time",
+    "value": 485.23616790771484,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:37:01.924230",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 489.43114280700684
+    }
+  },
+  {
+    "timestamp": "2026-01-07T19:38:33.643584",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:38:33.697144",
+    "metric_type": "response_time",
+    "value": 50.38857460021973,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-07T19:38:33.699774",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 52.94537544250488
+    }
+  },
+  {
+    "timestamp": "2026-01-09T14:32:06.808172",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T14:32:07.011593",
+    "metric_type": "response_time",
+    "value": 198.35567474365234,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T14:32:07.015317",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 202.0096778869629
+    }
+  },
+  {
+    "timestamp": "2026-01-09T14:33:20.055853",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T14:33:20.359061",
+    "metric_type": "response_time",
+    "value": 300.56309700012207,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T14:33:20.362433",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 303.8790225982666
+    }
+  },
+  {
+    "timestamp": "2026-01-09T15:09:06.456589",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:09:06.712517",
+    "metric_type": "response_time",
+    "value": 251.74260139465332,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:09:06.715507",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 254.67371940612793
+    }
+  },
+  {
+    "timestamp": "2026-01-09T15:11:24.415776",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:11:24.568754",
+    "metric_type": "response_time",
+    "value": 149.55639839172363,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:11:35.875143",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "providers_facilities",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 153.4571647644043
+    }
+  },
+  {
+    "timestamp": "2026-01-09T15:11:40.829246",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:11:40.878931",
+    "metric_type": "response_time",
+    "value": 46.89383506774902,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:11:49.196560",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 49.752235412597656
+    }
+  },
+  {
+    "timestamp": "2026-01-09T15:12:01.503921",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:12:01.570767",
+    "metric_type": "response_time",
+    "value": 63.788652420043945,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:12:10.241661",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "UNKNOWN",
+      "row_count": 2,
+      "execution_time_ms": 67.4140453338623
+    }
+  },
+  {
+    "timestamp": "2026-01-09T15:15:04.235403",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:15:04.505096",
+    "metric_type": "response_time",
+    "value": 265.5951976776123,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:15:12.719128",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 269.2995071411133
+    }
+  },
+  {
+    "timestamp": "2026-01-09T15:16:20.272684",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:16:20.696642",
+    "metric_type": "response_time",
+    "value": 420.43495178222656,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-09T15:16:28.440356",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 423.4943389892578
+    }
+  },
+  {
+    "timestamp": "2026-01-10T19:22:30.223917",
+    "metric_type": "sql_validity",
+    "value": true,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-10T19:22:30.272719",
+    "metric_type": "response_time",
+    "value": 44.82245445251465,
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-01-10T19:22:37.720211",
+    "metric_type": "query_executed",
+    "value": true,
+    "metadata": {
+      "domain": "clinical_claims_diagnosis",
+      "intent": "FREQUENCY_VOLUME",
+      "row_count": 1,
+      "execution_time_ms": 48.74253273010254
+    }
+  }
+]

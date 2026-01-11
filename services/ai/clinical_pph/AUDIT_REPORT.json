@@ -1,0 +1,120 @@
+{
+  "audit_date": "2026-01-07T15:32:29.645076",
+  "documents_audited": 3,
+  "documents": [
+    {
+      "filename": "TRAINING MANUAL POSTPARTOM HM.pdf",
+      "source_organization": "WHO",
+      "publication_year": 2024,
+      "version": null,
+      "scope": [
+        "Management (5 mentions)"
+      ],
+      "authority_level": "International - Highest",
+      "document_type": "Training Manual",
+      "pages_estimated": 2,
+      "character_count": 7966,
+      "word_count": 1212,
+      "quality_assessment": {
+        "has_noise": false,
+        "noise_indicators": [],
+        "has_tables": false,
+        "has_structured_content": true,
+        "readability": "Good - Normal sentence structure",
+        "issues": []
+      },
+      "text_preview": "FACILITATORS TRAINING MANUAL\nThe Federal Ministry of Health recognizes and appreciates the laudable and invaluable contributions of all the\nstakeholders who contributed to the development of this training manual.\nMay I recognize the outstanding contributions of JPIEGHO, BMGF , Africa Center of Excellent for Population Health and\nPolicy (ACEPHAP), the Departments and Agencies of Government, National Primary Health Care Development Agency\n(NPHCDA), National Health Insurance Authority (NHIA) , Nati"
+    },
+    {
+      "filename": "National guideline on PPH final for submission April 2024 (1)_ 20042024 (1).docx",
+      "source_organization": "WHO",
+      "publication_year": 2024,
+      "version": null,
+      "scope": [
+        "Prevention (24 mentions)",
+        "Diagnosis (6 mentions)",
+        "Management (23 mentions)",
+        "Referral (4 mentions)",
+        "Emergency Response (3 mentions)"
+      ],
+      "authority_level": "International - Highest",
+      "document_type": "Policy Document",
+      "pages_estimated": 25,
+      "character_count": 76844,
+      "word_count": 11461,
+      "quality_assessment": {
+        "has_noise": true,
+        "noise_indicators": [
+          "Excessive whitespace",
+          "Special character sequences"
+        ],
+        "has_tables": true,
+        "has_structured_content": true,
+        "readability": "Poor - Very short sentences (possible extraction issue)",
+        "issues": [
+          "Abnormally short sentences detected"
+        ]
+      },
+      "text_preview": "National Guideline for the Management \n     of \nPostpartum Haemorrhage\nFederal Ministry of Health and Social Welfare\nAbuja, Nigeria\nApril, 2024.\nSuggested citation: Federal Ministry of Health and Social Welfare. (2024). National Guidelines for the Management of Postpartum Haemorrhage. FMOH&SW; Abuja, Nigeria.\n \t\t\t\t\tForeword\nMaternal mortality is a public health problem in the Low- and Middle-Income Countries (LMIC) such as Nigeria and it is one of the strongest indicators of a country’s standard"
+    },
+    {
+      "filename": "POSTPARTUM PARTICIPANTS MANNUAL.pdf",
+      "source_organization": "WHO",
+      "publication_year": 2024,
+      "version": null,
+      "scope": [
+        "Management (5 mentions)"
+      ],
+      "authority_level": "International - Highest",
+      "document_type": "Training Manual",
+      "pages_estimated": 1,
+      "character_count": 4932,
+      "word_count": 708,
+      "quality_assessment": {
+        "has_noise": false,
+        "noise_indicators": [],
+        "has_tables": false,
+        "has_structured_content": true,
+        "readability": "Good - Normal sentence structure",
+        "issues": []
+      },
+      "text_preview": "PARTICIPANT TRAINING MANUAL\nMaternal mortality is a public health problem in the Low- and Middle-Income Countries (LMIC) such as Nigeria and it is one of the strongest indicators of a country’s\nstandard of living and maternity care. Every year, an estimated 14 million cases of PPH and 70,000 related maternal deaths are recorded globally. This implies that one\nwoman dies of PPH every four minutes.\nPostpartum haemorrhage accounts for 13.4 % of maternal deaths in high-income countries. In Asia and "
+    }
+  ],
+  "conflicts": [],
+  "recommendations": [
+    {
+      "title": "Improve Text Extraction Quality",
+      "description": "1 document(s) have extraction issues. Consider using OCR or manual review for better quality.",
+      "priority": "MEDIUM",
+      "action": "Re-process with OCR or review extraction scripts"
+    },
+    {
+      "title": "Implement Clinical-Aware Chunking",
+      "description": "Current chunking: 900 chars (~180 words), 120 char overlap. Upgrade to: 300-600 tokens (~225-450 words), section-aligned, preserve clinical concepts (definitions, protocols, contraindications).",
+      "priority": "CRITICAL",
+      "action": "Implement semantic chunking that respects clinical section boundaries"
+    },
+    {
+      "title": "Enrich Metadata for Precision Retrieval",
+      "description": "Add: guideline_name, issuing_body, year, clinical_context, pph_severity (mild/moderate/severe), document_path, section_title, authority_score, is_superseded.",
+      "priority": "CRITICAL",
+      "action": "Upgrade ingest.py to extract and index clinical metadata"
+    }
+  ],
+  "summary": {
+    "total_documents": 3,
+    "sources": [
+      "WHO"
+    ],
+    "years": [
+      2024
+    ],
+    "document_types": [
+      "Policy Document",
+      "Training Manual"
+    ],
+    "total_content_chars": 89742,
+    "total_content_words": 13381
+  }
+}

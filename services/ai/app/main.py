@@ -9,9 +9,27 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from contextlib import asynccontextmanager
-from .api.v1.ask import router as ask_router
 from .api.v1.stream import router as stream_router
-from .api.v1.branches import router as branches_router
+from .api.v1.chat import router as chat_router
+from .api.v1.states.adamawa import router as adamawa_router
+from .api.v1.states.fct import router as fct_router
+from .api.v1.states.kano import router as kano_router
+from .api.v1.states.zamfara import router as zamfara_router
+from .api.v1.states.kogi import router as kogi_router
+from .api.v1.states.osun import router as osun_router
+from .api.v1.states.rivers import router as rivers_router
+from .api.v1.states.sokoto import router as sokoto_router
+from .api.v1.states.kaduna import router as kaduna_router
+from .api.v1.providers.kb import router as providers_kb_router
+from .api.v1.clinical_pph import router as clinical_pph_router
+
+# Zamfara RAG API (standalone FAQ system)
+try:
+    from zamfara_rag.api import router as zamfara_rag_router
+    ZAMFARA_RAG_AVAILABLE = True
+except ImportError as e:
+    ZAMFARA_RAG_AVAILABLE = False
+    print(f"⚠️  Zamfara RAG API not available: {e}")
 from .core import config
 
 # Admin Insights router (optional - requires authentication)
@@ -37,6 +55,40 @@ async def lifespan(app: FastAPI):
         print("Branch configurations loaded")
     except Exception as e:
         print(f"Branch config error: {e}")
+
+    # Initialize KB contexts (states/providers)
+    try:
+        from .services.conversation_manager import conversation_manager
+        from .state_kb.registry import get_kbs
+        for kb in get_kbs().values():
+            conversation_manager.set_kb_context(kb.kb_id, {"name": kb.display_name, "kb_id": kb.kb_id})
+        print("KB configurations loaded")
+    except Exception as e:
+        print(f"KB config error: {e}")
+    
+    # Initialize Clinical PPH KB context
+    try:
+        from .services.conversation_manager import conversation_manager
+        conversation_manager.set_kb_context(
+            "clinical_pph", 
+            {
+                "name": "Clinical PPH (Postpartum Hemorrhage)",
+                "kb_id": "clinical_pph",
+                "domain": "clinical",
+                "topic": "postpartum_hemorrhage"
+            }
+        )
+        print("Clinical PPH KB configuration loaded")
+    except Exception as e:
+        print(f"Clinical PPH KB config error: {e}")
+    
+    # Initialize Provider RAG Service (production-grade, zero-hallucination)
+    try:
+        from .providers_rag.service import initialize_provider_rag_service
+        await initialize_provider_rag_service()
+        print("✅ Provider RAG Service initialized (production-grade)")
+    except Exception as e:
+        print(f"⚠️  Provider RAG Service initialization: {e}")
     
     # Initialize admin database service (non-blocking with timeout)
     try:
@@ -86,9 +138,24 @@ app.add_middleware(
 )
 
 # ==================== ROUTERS ====================
-app.include_router(ask_router, prefix="/api/v1")
+app.include_router(chat_router, prefix="/api")
 app.include_router(stream_router, prefix="/api/v1")
-app.include_router(branches_router, prefix="/api/v1")
+app.include_router(adamawa_router, prefix="/api/v1")
+app.include_router(fct_router, prefix="/api/v1")
+app.include_router(kano_router, prefix="/api/v1")
+app.include_router(zamfara_router, prefix="/api/v1")
+app.include_router(kogi_router, prefix="/api/v1")
+app.include_router(osun_router, prefix="/api/v1")
+app.include_router(rivers_router, prefix="/api/v1")
+app.include_router(sokoto_router, prefix="/api/v1")
+app.include_router(kaduna_router, prefix="/api/v1")
+app.include_router(providers_kb_router, prefix="/api/v1/providers")
+app.include_router(clinical_pph_router, prefix="/api/v1")
+
+# Zamfara RAG API (standalone FAQ endpoints at /zamfara/*)
+if ZAMFARA_RAG_AVAILABLE:
+    app.include_router(zamfara_rag_router, prefix="/zamfara", tags=["zamfara-faq"])
+    print("✅ Zamfara RAG API enabled at /zamfara/*")
 
 # Admin Insights Router (Chat with Data)
 if ADMIN_ROUTER_AVAILABLE:

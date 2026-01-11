@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-01-01T15:11:37.822092",
+    "original_query": "show diagnosis codes",
+    "original_sql": "SELECT diagnosis_code FROM diagnoses",
+    "corrected_sql": "SELECT name FROM diagnoses",
+    "correction_reason": "Must use name, not code"
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.665540",
+    "original_query": "show diagnosis codes",
+    "original_sql": "SELECT diagnosis_code FROM diagnoses",
+    "corrected_sql": "SELECT name FROM diagnoses",
+    "correction_reason": "Must use name, not code"
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.879386",
+    "original_query": "show diagnosis codes",
+    "original_sql": "SELECT diagnosis_code FROM diagnoses",
+    "corrected_sql": "SELECT name FROM diagnoses",
+    "correction_reason": "Must use name, not code"
+  }
+]

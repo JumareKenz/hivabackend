@@ -34,19 +34,17 @@ class AdminSettings(BaseSettings):
         "https://hiva-two.vercel.app",
     ]
     
-    # Groq API Configuration (Using same Groq API as users/providers)
-    GROQ_API_KEY: Optional[str] = None  # Set in .env file
-    GROQ_BASE_URL: str = "https://api.groq.com/openai/v1"  # Groq API endpoint
-    LLM_MODEL: str = "openai/gpt-oss-120b"  # Groq model for SQL generation (on_demand)
+    # RunPod GPU LLM Configuration (Primary - for admin/vanna LLM)
+    RUNPOD_API_KEY: Optional[str] = None  # Set in .env file
+    RUNPOD_BASE_URL: str = "https://6j0stkh7bjoio1-8000.proxy.runpod.net/v1"  # RunPod proxy endpoint
+    LLM_MODEL: str = "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4"  # Model on RunPod
     LLM_TIMEOUT: int = 300
     DEFAULT_NUM_PREDICT: int = 2000  # Higher for SQL generation
     TEMPERATURE: float = 0.1  # Lower for SQL accuracy
     
-    # RunPod GPU LLM Configuration (COMMENTED OUT - Using Groq API instead)
-    # RUNPOD_API_KEY: Optional[str] = None  # Set in .env file
-    # RUNPOD_ENDPOINT_ID: Optional[str] = None  # RunPod endpoint ID
-    # RUNPOD_BASE_URL: Optional[str] = None  # e.g., "https://api.runpod.ai/v2/{endpoint_id}/runsync"
-    # LLM_MODEL: str = "Qwen/Qwen2.5-14B-Instruct-GPTQ-Int4"  # Model name on RunPod
+    # Groq API Configuration (Fallback - if RunPod is not available)
+    GROQ_API_KEY: Optional[str] = None  # Set in .env file
+    GROQ_BASE_URL: str = "https://api.groq.com/openai/v1"  # Groq API endpoint
     
     # Admin Authentication
     ADMIN_API_KEY: Optional[str] = None  # Set in .env for admin authentication
@@ -63,9 +61,15 @@ class AdminSettings(BaseSettings):
     MAX_CONVERSATION_HISTORY: int = 10
     
     # MCP Migration Feature Flags
-    USE_MCP_MODE: bool = False  # Set to True to enable MCP mode
-    MCP_GRADUAL_ROLLOUT: float = 0.0  # Percentage of traffic (0.0 to 1.0) - 0.0 = legacy only, 1.0 = MCP only
-    MCP_FALLBACK_TO_LEGACY: bool = True  # Fallback to legacy mode on MCP errors
+    # DISABLED: MCP mode is disabled to ensure Phase 4 validator runs
+    # The validator is integrated into legacy mode and must be used for all queries
+    USE_MCP_MODE: bool = False  # DISABLED - Legacy mode with validator is required
+    MCP_GRADUAL_ROLLOUT: float = 0.0  # DISABLED - No MCP traffic
+    MCP_FALLBACK_TO_LEGACY: bool = True  # DISABLED - MCP not in use
+    
+    # Vanna AI Feature Flags
+    USE_VANNA_AI: bool = True  # Set to True to enable Vanna AI for SQL generation
+    VANNA_FALLBACK_TO_LEGACY: bool = True  # Fallback to legacy SQL generator if Vanna fails
     
     class Config:
         env_file = ".env"

@@ -1,0 +1,108 @@
+{
+  "ingestion_date": "2026-01-07T15:37:25.398744",
+  "version": "v2_clinical_aware",
+  "documents_processed": 3,
+  "total_documents": 3,
+  "total_chunks": 9,
+  "results": [
+    {
+      "status": "success",
+      "file": "TRAINING MANUAL POSTPARTOM HM.pdf",
+      "chunks_created": 1,
+      "document_metadata": {
+        "guideline_name": "FACILITATORS TRAINING MANUAL",
+        "issuing_body": "WHO",
+        "publication_year": 2024,
+        "clinical_scope": [
+          "Management"
+        ],
+        "authority_score": 100,
+        "document_type": "Training Manual",
+        "document_path": "/root/hiva/services/ai/clinical_pph/docs/TRAINING MANUAL POSTPARTOM HM.pdf",
+        "is_superseded": false,
+        "superseded_by": null,
+        "version": null,
+        "word_count": 1212,
+        "character_count": 7966
+      },
+      "quality_metrics": {
+        "chunks_with_dosages": 0,
+        "chunks_with_protocols": 0,
+        "chunks_with_contraindications": 0,
+        "severity_distribution": {
+          "severe": 1
+        }
+      }
+    },
+    {
+      "status": "success",
+      "file": "National guideline on PPH final for submission April 2024 (1)_ 20042024 (1).docx",
+      "chunks_created": 7,
+      "document_metadata": {
+        "guideline_name": "National Guideline for the Management",
+        "issuing_body": "WHO",
+        "publication_year": 2024,
+        "clinical_scope": [
+          "Prevention",
+          "Diagnosis",
+          "Management",
+          "Referral",
+          "Emergency Response"
+        ],
+        "authority_score": 100,
+        "document_type": "Policy Document",
+        "document_path": "/root/hiva/services/ai/clinical_pph/docs/National guideline on PPH final for submission April 2024 (1)_ 20042024 (1).docx",
+        "is_superseded": false,
+        "superseded_by": null,
+        "version": null,
+        "word_count": 11461,
+        "character_count": 76844
+      },
+      "quality_metrics": {
+        "chunks_with_dosages": 4,
+        "chunks_with_protocols": 3,
+        "chunks_with_contraindications": 2,
+        "severity_distribution": {
+          "severe": 3,
+          "mild": 2,
+          "any": 1,
+          "moderate": 1
+        }
+      }
+    },
+    {
+      "status": "success",
+      "file": "POSTPARTUM PARTICIPANTS MANNUAL.pdf",
+      "chunks_created": 1,
+      "document_metadata": {
+        "guideline_name": "PARTICIPANT TRAINING MANUAL",
+        "issuing_body": "WHO",
+        "publication_year": 2024,
+        "clinical_scope": [
+          "Management"
+        ],
+        "authority_score": 100,
+        "document_type": "Training Manual",
+        "document_path": "/root/hiva/services/ai/clinical_pph/docs/POSTPARTUM PARTICIPANTS MANNUAL.pdf",
+        "is_superseded": false,
+        "superseded_by": null,
+        "version": null,
+        "word_count": 708,
+        "character_count": 4932
+      },
+      "quality_metrics": {
+        "chunks_with_dosages": 0,
+        "chunks_with_protocols": 0,
+        "chunks_with_contraindications": 0,
+        "severity_distribution": {
+          "severe": 1
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_dosage_chunks": 4,
+    "total_protocol_chunks": 3,
+    "total_contraindication_chunks": 2
+  }
+}

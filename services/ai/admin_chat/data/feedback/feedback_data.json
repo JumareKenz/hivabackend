@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-01-01T15:11:37.821939",
+    "session_id": "test_session_1767276697",
+    "query": "most common diagnosis",
+    "sql": "SELECT ...",
+    "feedback_type": "positive",
+    "feedback_data": {
+      "rating": 5
+    }
+  },
+  {
+    "timestamp": "2026-01-01T15:12:08.665318",
+    "session_id": "test_session_1767276728",
+    "query": "most common diagnosis",
+    "sql": "SELECT ...",
+    "feedback_type": "positive",
+    "feedback_data": {
+      "rating": 5
+    }
+  },
+  {
+    "timestamp": "2026-01-01T15:12:27.879084",
+    "session_id": "test_session_1767276747",
+    "query": "most common diagnosis",
+    "sql": "SELECT ...",
+    "feedback_type": "positive",
+    "feedback_data": {
+      "rating": 5
+    }
+  }
+]

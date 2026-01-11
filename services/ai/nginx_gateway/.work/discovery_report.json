@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-01-09 18:10:55",
+  "base_domain": "api.hiva.chat",
+  "services_discovered": 3,
+  "services": [
+    {
+      "port": 8000,
+      "service_name": "ai-service-8000",
+      "health_endpoint": "/health",
+      "base_url": "http://localhost:8000",
+      "process_name": "python3",
+      "pid": 2991836,
+      "is_healthy": true,
+      "response_time_ms": 63.66252899169922,
+      "discovery_method": "fallback",
+      "subdomain": "ai-service-8000"
+    },
+    {
+      "port": 8001,
+      "service_name": "hiva-admin-chat",
+      "health_endpoint": "/health",
+      "base_url": "http://localhost:8001",
+      "process_name": "python3",
+      "pid": 2962592,
+      "is_healthy": true,
+      "response_time_ms": 20.540714263916016,
+      "discovery_method": "package_name",
+      "subdomain": "hiva-admin-chat"
+    },
+    {
+      "port": 8300,
+      "service_name": "dcal-ai-engine",
+      "health_endpoint": "/health",
+      "base_url": "http://localhost:8300",
+      "process_name": "python3",
+      "pid": 2545910,
+      "is_healthy": true,
+      "response_time_ms": 16.870498657226562,
+      "discovery_method": "package_name",
+      "subdomain": "dcal-ai-engine"
+    }
+  ]
+}
